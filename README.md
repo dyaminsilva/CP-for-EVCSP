@@ -2,7 +2,7 @@
 
 C++ implementation for *Is Constraint Programming Effective for Electric Vehicle Charging Scheduling Problems?* by Daniel Yamín and Willem-Jan van Hoeve. Given fixed vehicle routes, the models schedule charging to minimize makespan or total charging cost (electricity and peak demand).
 
-The [112 baseline instances](E-VCSP-CGG-instances/README.txt) build on the multigraph routing benchmark of Yamín, Desaulniers, and Mendoza ([INFORMS Journal on Computing, 2025](https://doi.org/10.1287/ijoc.2023.0404)). The vehicle routes are fixed to those obtained in their adjustable-power study ([Les Cahiers du GERAD, G-2026-63](https://www.gerad.ca/en/papers/G-2026-63)).
+The [112 baseline instances](instances/README.txt) build on the multigraph routing benchmark of Yamín, Desaulniers, and Mendoza ([INFORMS Journal on Computing, 2025](https://doi.org/10.1287/ijoc.2023.0404)). The vehicle routes are fixed to those obtained in their adjustable-power study ([Les Cahiers du GERAD, G-2026-63](https://www.gerad.ca/en/papers/G-2026-63)).
 
 ## Build and run
 

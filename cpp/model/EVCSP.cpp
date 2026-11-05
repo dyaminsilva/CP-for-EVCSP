@@ -56,7 +56,7 @@ bool EVCSP::Vehicle::hasEnoughChargingTime() const {
 
 // read the instance without modifying its parameters.
 EVCSP::EVCSP(std::string name)
-    : instanceName(std::move(name)), dataDirectory("E-VCSP-CGG-instances") {
+    : instanceName(std::move(name)), dataDirectory("instances") {
     loadInstance();
     setChargingCosts();
 }

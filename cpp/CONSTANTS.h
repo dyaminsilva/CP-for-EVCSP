@@ -5,7 +5,7 @@
 namespace constants {
 
 // period duration is used only by the optional cost objective.
-// makespan inputs come entirely from E-VCSP-CGG-instances.
+// makespan inputs come entirely from instances.
 inline constexpr int ChargingPeriodMinutes = 5;
 inline constexpr double Precision = 1e-5;
 

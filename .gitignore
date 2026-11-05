@@ -9,7 +9,7 @@
 !/CP-for-EVCSP.vcxproj.filters
 
 !/cpp/
-!/E-VCSP-CGG-instances/
+!/instances/
 !/results/
 /results/*
 !/results/results-baseline.xlsx
