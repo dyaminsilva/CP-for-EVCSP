@@ -2,7 +2,7 @@
 set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
-# IBM CPLEX Studio installation on servers 4 and 5.
+# Path to the IBM ILOG CPLEX Optimization Studio installation.
 studio=/opt/ibm/ILOG/CPLEX_Studio221
 
 g++ -std=c++20 -O2 -DNDEBUG -DIL_STD -m64 -fPIC -fno-strict-aliasing \
