@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Application">
+      <UniqueIdentifier>{67E3A17A-1852-4D2E-8BEC-7FDA702D275C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{338A6EAB-D18C-4A92-95A9-F4FD6D85D182}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cpp\CONSTANTS.h"><Filter>Application</Filter></ClInclude>
+    <ClInclude Include="cpp\model\EVCSP.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="cpp\model\ChargingCP.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="cpp\model\ChargingMILP.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="cpp\model\ChargingCommon.h"><Filter>Model</Filter></ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp\main.cpp"><Filter>Application</Filter></ClCompile>
+    <ClCompile Include="cpp\model\EVCSP.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="cpp\model\ChargingCP.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="cpp\model\ChargingMILP.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="cpp\model\ChargingCommon.cpp"><Filter>Model</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.txt" />
+  </ItemGroup>
+</Project>

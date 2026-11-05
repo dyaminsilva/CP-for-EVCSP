@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{643CAC91-3B1D-4E7F-A22E-F4634C85D431}</ProjectGuid>
+    <RootNamespace>CP_for_EVCSP</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CP-for-EVCSP</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <!-- Override with /p:CplexStudioRoot=... or an environment variable of the same name. -->
+    <CplexStudioRoot Condition="'$(CplexStudioRoot)'=='' and '$(CPLEX_STUDIO_DIR2211)'!=''">$(CPLEX_STUDIO_DIR2211)</CplexStudioRoot>
+    <CplexStudioRoot Condition="'$(CplexStudioRoot)'==''">C:\Program Files\IBM\ILOG\CPLEX_Studio2211</CplexStudioRoot>
+    <CplexLibraryName Condition="'$(CplexLibraryName)'==''">cplex2211</CplexLibraryName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <!-- Match /MDd with the CP Optimizer and Concert debug-runtime libraries. -->
+    <CplexLibraryVariant>stat_mdd</CplexLibraryVariant>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <!-- Match /MD with the CP Optimizer and Concert release-runtime libraries. -->
+    <CplexLibraryVariant>stat_mda</CplexLibraryVariant>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(ProjectDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)build\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>CP-for-EVCSP</TargetName>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerCommandArguments>C101-25</LocalDebuggerCommandArguments>
+    <LocalDebuggerEnvironment>PATH=$(CplexStudioRoot)\cplex\bin\x64_win64;$(CplexStudioRoot)\cpoptimizer\bin\x64_win64;$(PATH)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)cpp;$(CplexStudioRoot)\cpoptimizer\include;$(CplexStudioRoot)\concert\include;$(CplexStudioRoot)\cplex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>IL_STD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(CplexStudioRoot)\cpoptimizer\lib\x64_windows_msvc14\$(CplexLibraryVariant);$(CplexStudioRoot)\concert\lib\x64_windows_msvc14\$(CplexLibraryVariant);$(CplexStudioRoot)\cplex\lib\x64_windows_msvc14\$(CplexLibraryVariant);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cp.lib;ilocplex.lib;$(CplexLibraryName).lib;concert.lib;odbc32.lib;odbccp32.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="cpp\CONSTANTS.h" />
+    <ClInclude Include="cpp\model\EVCSP.h" />
+    <ClInclude Include="cpp\model\ChargingCP.h" />
+    <ClInclude Include="cpp\model\ChargingMILP.h" />
+    <ClInclude Include="cpp\model\ChargingCommon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp\main.cpp" />
+    <ClCompile Include="cpp\model\EVCSP.cpp" />
+    <ClCompile Include="cpp\model\ChargingCP.cpp" />
+    <ClCompile Include="cpp\model\ChargingMILP.cpp" />
+    <ClCompile Include="cpp\model\ChargingCommon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Target Name="ValidateCplexStudio" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(CplexStudioRoot)\cpoptimizer\include\ilcp\cp.h')" Text="CP Optimizer headers were not found. Set CplexStudioRoot to your CPLEX Optimization Studio installation." />
+    <Error Condition="!Exists('$(CplexStudioRoot)\cplex\include\ilcplex\ilocplex.h')" Text="CPLEX Concert headers were not found. Set CplexStudioRoot to your CPLEX Optimization Studio installation." />
+    <Error Condition="!Exists('$(CplexStudioRoot)\cplex\lib\x64_windows_msvc14\$(CplexLibraryVariant)\ilocplex.lib')" Text="The matching $(CplexLibraryVariant) CPLEX Concert library was not found under $(CplexStudioRoot)." />
+    <Error Condition="!Exists('$(CplexStudioRoot)\cpoptimizer\lib\x64_windows_msvc14\$(CplexLibraryVariant)\cp.lib')" Text="The $(CplexLibraryVariant) CP Optimizer x64 library was not found under $(CplexStudioRoot)." />
+    <Error Condition="!Exists('$(CplexStudioRoot)\concert\lib\x64_windows_msvc14\$(CplexLibraryVariant)\concert.lib')" Text="The matching $(CplexLibraryVariant) Concert x64 library was not found under $(CplexStudioRoot)." />
+    <Error Condition="!Exists('$(CplexStudioRoot)\cplex\lib\x64_windows_msvc14\$(CplexLibraryVariant)\$(CplexLibraryName).lib')" Text="The CPLEX dependency $(CplexLibraryName).lib was not found. Check CplexStudioRoot and CplexLibraryName." />
+    <Error Condition="!Exists('$(CplexStudioRoot)\cplex\bin\x64_win64\$(CplexLibraryName).dll')" Text="The CPLEX runtime $(CplexLibraryName).dll was not found. Check CplexStudioRoot and CplexLibraryName." />
+  </Target>
+  <Target Name="CopyCplexRuntime" AfterTargets="Build">
+    <!-- The native CP library uses CPLEX; keep its runtime available to command-line runs too. -->
+    <Copy SourceFiles="$(CplexStudioRoot)\cplex\bin\x64_win64\$(CplexLibraryName).dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

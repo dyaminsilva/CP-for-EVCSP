@@ -1,0 +1,17 @@
+# Public release files
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/build_linux.sh
+!/run_all.sh
+!/CP-for-EVCSP.sln
+!/CP-for-EVCSP.vcxproj
+!/CP-for-EVCSP.vcxproj.filters
+
+!/cpp/
+!/E-VCSP-CGG-instances/
+!/results/
+/results/*
+!/results/results-baseline.xlsx
+!/results/results-strengthening.xlsx
