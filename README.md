@@ -6,8 +6,8 @@ The [112 baseline instances](instances/README.txt) build on the multigraph routi
 
 ## Methods
 
-- **MIP:** arc-flow mixed-integer formulation, with dual simplex at the root and deterministic parallel mode.
-- **CP:** interval-based constraint programming, including the duration-budget and mandatory minimum-grid-consumption strengthenings.
+- **MIP:** arc-flow mixed-integer formulation.
+- **CP:** interval-based constraint programming.
 - **CP+:** the same CP model with additional LP-based cost propagation.
 
 CP and CP+ both retain the first two strengthenings; the third, excluding avoidable overcharging, is not included. CP+ adds propagation only for the cost objective, so it is identical to CP for makespan. Additional valid inequalities and bounds are enabled by default.
