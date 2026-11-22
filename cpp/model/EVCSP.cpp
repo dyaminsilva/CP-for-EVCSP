@@ -1,9 +1,9 @@
 #include "EVCSP.h"
 
-#include <algorithm>
 #include <cmath>
 #include <fstream>
 #include <iomanip>
+#include <limits>
 #include <ostream>
 #include <set>
 #include <sstream>
@@ -16,14 +16,19 @@ void require(bool condition, const std::string& message) {
     if (!condition) throw std::runtime_error(message);
 }
 
-double number(const std::string& text, const std::string& field) {
-    std::istringstream input(text);
-    double value = 0.0;
-    require(input >> value && input.eof() && std::isfinite(value), "Invalid " + field + ": " + text);
-    return value;
+// truncation to work with integer values
+int scaledPower(const std::string& text) {
+    const auto dot = text.find('.');
+    require(!text.empty() && text.find_first_not_of("0123456789.") == std::string::npos &&
+            dot == text.rfind('.') && (dot == std::string::npos || text.size() - dot - 1 <= 4),
+            "Expected a nonnegative decimal with at most four decimal places: " + text);
+    // ignore only floating-point representation noise at an integer boundary.
+    const double scaled = std::round(std::stod(text) * constants::PowerScale);
+    require(scaled >= 0 && scaled <= std::numeric_limits<int>::max(), "Power value is out of range: " + text);
+    return static_cast<int>(scaled);
 }
 
-// ignore blank lines and # comments.
+// ignore blank lines and # comments
 std::string nextDataLine(std::istream& input) {
     std::string line;
     while (std::getline(input, line)) {
@@ -39,7 +44,7 @@ std::string nextDataLine(std::istream& input) {
 void readHeader(std::istream& input, const std::string& expected, auto& value) {
     std::istringstream row(nextDataLine(input));
     std::string key, extra;
-    require(row >> key >> value && key == expected && std::isfinite(value) && !(row >> extra),
+    require(row >> key >> value && key == expected && !(row >> extra),
             "Expected '" + expected + " <value>'.");
 }
 
@@ -47,14 +52,7 @@ void readHeader(std::istream& input, const std::string& expected, auto& value) {
 
 using namespace model;
 
-// check whether the vehicle has enough charging time (based on bounds)
-bool EVCSP::Vehicle::hasEnoughChargingTime() const {
-    return minimumChargingPeriods == 0 ||
-           (lastChargingPeriod >= firstChargingPeriod &&
-            minimumChargingPeriods <= lastChargingPeriod - firstChargingPeriod + 1);
-}
-
-// read the instance without modifying its parameters.
+// read the instance without modifying its parameters
 EVCSP::EVCSP(std::string name)
     : instanceName(std::move(name)), dataDirectory("instances") {
     loadInstance();
@@ -69,20 +67,23 @@ void EVCSP::loadInstance() {
         require(static_cast<bool>(input), "Cannot open instance file.");
         readHeader(input, "HORIZON", last_charging_period);
         readHeader(input, "CHARGERS", B);
-        readHeader(input, "GRID_CAPACITY", maxPower);
+        std::string grid;
+        readHeader(input, "GRID_CAPACITY", grid);
         readHeader(input, "MAX_ADJUSTMENTS", N);
-        require(last_charging_period > 0 && B > 0 && maxPower >= 0 && N >= 0,
+        require(last_charging_period > 0 && B > 0 && N >= 0,
                 "Invalid horizon, charger count, grid capacity or adjustment limit.");
+
+        maxPower = scaledPower(grid);
 
         std::istringstream powers(nextDataLine(input));
         std::string key, token;
         powers >> key;
         require(key == "POWER_LEVELS", "Expected POWER_LEVELS followed by positive powers.");
-        W = {0.0}; // index 0 is the zero-power sentinel
+        W = {0}; // index 0 is the zero-power sentinel
         while (powers >> token) {
-            const double power = number(token, "power level");
-            require(power > W.back(), "Power levels must be positive and strictly increasing.");
-            W.push_back(power);
+            const int scaled = scaledPower(token);
+            require(scaled > W.back(), "Power levels must be positive and strictly increasing.");
+            W.push_back(scaled);
         }
         require(W.size() > 1, "At least one positive power level is required.");
         int expected;
@@ -93,16 +94,17 @@ void EVCSP::loadInstance() {
             std::istringstream row(line);
             std::string extra;
             Vehicle vehicle;
+            std::string requirement;
             require(row >> vehicle.id >> vehicle.firstChargingPeriod >> vehicle.lastChargingPeriod >>
-                    vehicle.powerRequirement && !(row >> extra),
+                    requirement && !(row >> extra),
                     "Expected id first_period last_period required_power: " + line);
             require(vehicle.id > 0 && ids.insert(vehicle.id).second && vehicle.firstChargingPeriod >= 1 &&
-                    vehicle.lastChargingPeriod >= 0 && vehicle.lastChargingPeriod <= last_charging_period &&
-                    std::isfinite(vehicle.powerRequirement) && vehicle.powerRequirement >= 0,
+                    vehicle.lastChargingPeriod >= 0 && vehicle.lastChargingPeriod <= last_charging_period,
                     "Invalid vehicle ID, charging window or power requirement: " + line);
-            // Short/empty charging windows are allowed: the solvers certify infeasibility.
-            const double duration = std::ceil(vehicle.powerRequirement / W.back() - constants::Precision);
-            vehicle.minimumChargingPeriods = static_cast<int>(std::max(0.0, duration));
+            // Short/empty charging windows are allowed: the solvers certify infeasibility
+            vehicle.powerRequirement = scaledPower(requirement);
+            vehicle.minimumChargingPeriods = static_cast<int>(
+                (static_cast<long long>(vehicle.powerRequirement) + W.back() - 1) / W.back());
             vehicles.push_back(vehicle);
         }
         require(vehicles.size() == static_cast<std::size_t>(expected),
@@ -112,7 +114,7 @@ void EVCSP::loadInstance() {
     }
 }
 
-// set the tariff profile and demand charge here for cost sensitivity experiments.
+// set the tariff profile and demand charge here for cost sensitivity experiments
 void EVCSP::setChargingCosts() {
     const int T = last_charging_period;
     c.assign(T + 1, 0.0);
@@ -120,11 +122,12 @@ void EVCSP::setChargingCosts() {
         const int band = t <= T / 3 ? 0 : t <= 2 * T / 3 ? 1 : 2;
         c[t] = constants::Tariffs[band];
     }
-    const double cMin = *std::min_element(constants::Tariffs.begin(), constants::Tariffs.end());
-    F = constants::DemandChargeFactor * cMin * (tau * T / 60.0);
+    F = constants::DemandChargeFactor * constants::ReferenceTariff * (tau * T / 60.0);
 }
 
+// print summary of the instance data
 void EVCSP::printSummary(std::ostream& out) const {
+    out << std::fixed << std::setprecision(2);
     out << "Instance: " << instanceName << '\n'
         << "Instance file: " << (dataDirectory / (instanceName + ".txt")).string() << '\n'
         << "EVs: " << vehicles.size() << "\nChargers: " << B
@@ -133,16 +136,9 @@ void EVCSP::printSummary(std::ostream& out) const {
         << "Positive power levels: " << W.size() - 1 << '\n'
         << "Power levels:";
     for (std::size_t p = 1; p < W.size(); ++p) out << ' ' << W[p];
-    out << "\n\n EV  First  Last   Power sum  Min periods\n";
-    int shortWindows = 0;
-    out << std::fixed << std::setprecision(3);
+    out << "\n\nEV\tFirst\tLast\tPower sum\tMin periods\n";
     for (const auto& vehicle : vehicles) {
-        out << std::setw(3) << vehicle.id
-            << std::setw(7) << vehicle.firstChargingPeriod << std::setw(6) << vehicle.lastChargingPeriod
-            << std::setw(12) << vehicle.powerRequirement << std::setw(13) << vehicle.minimumChargingPeriods << '\n';
-        if (!vehicle.hasEnoughChargingTime()) ++shortWindows;
-    }
-    if (shortWindows > 0) {
-        out << "Individual charging windows too short even at maximum power: " << shortWindows << '\n';
+        out << vehicle.id << '\t' << vehicle.firstChargingPeriod << '\t' << vehicle.lastChargingPeriod
+            << '\t' << vehicle.powerRequirement << '\t' << vehicle.minimumChargingPeriods << '\n';
     }
 }

@@ -1,9 +1,11 @@
 # Public release files
 /*
 !/.gitignore
+!/.gitattributes
 !/README.md
 !/LICENSE
 !/build_linux.sh
+!/build_macos.sh
 !/CP-for-EVCSP.sln
 !/CP-for-EVCSP.vcxproj
 !/CP-for-EVCSP.vcxproj.filters
@@ -12,5 +14,29 @@
 !/instances/
 !/results/
 /results/*
-!/results/results-baseline.xlsx
-!/results/results-strengthening.xlsx
+!/results/README.md
+!/results/costs/
+!/results/costs-flat/
+!/results/costs-moderate/
+!/results/makespan/
+!/results/makespan-adjustments2/
+!/results/makespan-adjustments4/
+/results/*/*
+!/results/*/results-MILP.txt
+!/results/*/results-CP.txt
+!/results/*/results-CP-propagation.txt
+!/results/*/logs/
+!/results/*/logs-propagation/
+/results/*/logs/*
+/results/*/logs-propagation/*
+!/results/*/logs/*.log
+!/results/*/logs-propagation/*.log
+
+# Workbooks and editor lock files stay local, including inside allowed folders.
+*.[xX][lL][sS]
+*.[xX][lL][sS][xX]
+*.[xX][lL][sS][mM]
+*.[xX][lL][sS][bB]
+*.[xX][lL][tT][xX]
+*.[xX][lL][tT][mM]
+~$*

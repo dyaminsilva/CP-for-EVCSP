@@ -1,0 +1,6 @@
+# Keep shell scripts usable after a Windows checkout.
+*.sh text eol=lf
+
+# Preserve the audited result tables and logs byte for byte.
+/results/**/*.txt -text
+/results/**/*.log -text

@@ -9,6 +9,7 @@ namespace model {
 ChargingResult solveCP(const EVCSP& data,
                        const std::string& objective = "makespan",
                        double timeLimit = constants::TimeLimitSeconds,
-                       bool log = true);
+                       bool log = true,
+                       bool useCostPropagation = false);
 
 } // namespace model
