@@ -1,0 +1,54 @@
+Instance: C102-25
+Instance file: instances/C102-25.txt
+EVs: 3
+Chargers: 2
+Horizon: 36 periods
+Maximum power adjustments: 2
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	29	1046000	6
+2	1	36	1708000	10
+3	1	28	3580788	20
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 48 variables, 75 constraints
+ ! Presolve      : 24 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 115.0 (before), 115.0 (after)
+ !  . Memory usage      : 653.1 kB (before), 653.1 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0         48                 -
+ + New bound is 37
+ ! Using iterative diving.
+ *            37     1386  0.04s        1      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 37 (optimal - effective tol. is 0.00)
+ ! Best bound             : 37
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 20163
+ ! Number of fails        : 2171
+ ! Total memory usage     : 5.8 MB (5.6 MB CP Optimizer + 0.1 MB Concert)
+ ! Time spent in solve    : 0.04s (0.03s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 1008149.8
+ ! ----------------------------------------------------------------------------
+
+CP status: Optimal
+Objective: makespan
+Solve time: 0.03 seconds
+Lower bound: 36.00
+Objective value: 36.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	21	30	9
+2	1	1	59964	21	30	9
+2	2	3	179894	30	36	6
+2	3	2	119929	36	37	1
+3	1	3	179894	1	21	20
+Block intervals are [Start, End), in charging periods.

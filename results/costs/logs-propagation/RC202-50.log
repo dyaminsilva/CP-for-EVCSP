@@ -1,0 +1,48 @@
+Instance: RC202-50
+Instance file: instances/RC202-50.txt
+EVs: 7
+Chargers: 3
+Horizon: 56 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 74955 149911 224867
+
+EV	First	Last	Power sum	Min periods
+1	1	53	3770224	17
+2	1	46	4019558	18
+3	1	54	4182542	19
+4	1	56	3486890	16
+5	1	41	3234000	15
+6	1	40	3364000	15
+7	1	56	2922000	13
+Initial cost LP bound: 317.06 (0.13 seconds of preprocessing)
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 21877 variables, 15782 constraints
+ ! Presolve      : 2188 extractables eliminated
+ ! TimeLimit            = 599.86
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.38s (0.38s extraction + 0.01s propagation)
+ !  . Log search space  : 30262.0 (before), 30262.0 (after)
+ !  . Memory usage      : 33.1 MB (before), 33.1 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0      21877                 -
+ + New bound is 317.0587
+ ! Using temporal relaxation.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 317.0587
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 16841273
+ ! Number of fails        : 8327924
+ ! Total memory usage     : 488.3 MB (470.0 MB CP Optimizer + 18.2 MB Concert)
+ ! Time spent in solve    : 599.90s (599.53s engine + 0.38s extraction)
+ ! Search speed (br. / s) : 28090.8
+ ! ----------------------------------------------------------------------------
+
+CP+ status: Unknown
+Objective: costs
+Solve time: 600.04 seconds
+Lower bound: 317.06

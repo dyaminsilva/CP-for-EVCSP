@@ -1,0 +1,51 @@
+Instance: R205-50
+Instance file: instances/R205-50.txt
+EVs: 9
+Chargers: 3
+Horizon: 85 periods
+Maximum power adjustments: 2
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	69	2484000	14
+2	1	84	2614000	15
+3	1	69	4336320	25
+4	1	82	3309336	19
+5	1	69	3233780	18
+6	1	85	2662000	15
+7	1	71	3207335	18
+8	1	85	4282353	24
+9	1	68	4160928	24
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 144 variables, 213 constraints
+ ! Presolve      : 72 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 468.5 (before), 468.5 (after)
+ !  . Memory usage      : 1.2 MB (before), 1.2 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        144                 -
+ + New bound is 86
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ ! Using failure-directed search.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 86
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 541076575
+ ! Number of fails        : 108787691
+ ! Total memory usage     : 22.2 MB (22.0 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.00s (600.00s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 901794.3
+ ! ----------------------------------------------------------------------------
+
+CP status: Unknown
+Objective: makespan
+Solve time: 600.00 seconds
+Lower bound: 85.00

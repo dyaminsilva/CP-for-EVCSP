@@ -1,0 +1,121 @@
+Instance: C201-50
+Instance file: instances/C201-50.txt
+EVs: 6
+Chargers: 2
+Horizon: 118 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	118	4349811	25
+2	1	57	2678000	15
+3	1	55	3661738	21
+4	1	118	2628000	15
+5	1	118	3337939	19
+6	1	57	2466000	14
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve modified 6481 coefficients.
+Aggregator did 18 substitutions.
+Reduced MIP has 1941 rows, 7156 columns, and 51660 nonzeros.
+Reduced MIP has 7155 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (77.26 ticks)
+Probing time = 0.02 sec. (7.41 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1941 rows, 7156 columns, and 51660 nonzeros.
+Reduced MIP has 7155 binaries, 1 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (28.61 ticks)
+Probing time = 0.01 sec. (7.41 ticks)
+Clique table members: 1694.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.20 sec. (377.00 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      108.0000   477                    108.0000     2762         
+      0     0      108.0000   392                    Cuts: 22     3535         
+      0     0      108.0000   620                    Cuts: 87     5039         
+*     0+    0                          118.0000      108.0000             8.47%
+*     0+    0                          117.0000      108.0000             7.69%
+      0     0      108.0000   613      117.0000      Cuts: 10     6329    7.69%
+      0     0      108.0000   761      117.0000      Cuts: 44     7783    7.69%
+Detecting symmetries...
+      0     2      108.0000   386      117.0000      108.0000     7783    7.69%
+Elapsed time = 8.64 sec. (16306.62 ticks, tree = 0.02 MB, solutions = 2)
+      1     3      108.0000   353      117.0000      108.0000     7848    7.69%
+      2     3      108.0000   430      117.0000      108.0000    11538    7.69%
+      7     9      108.0000   446      117.0000      108.0000    15328    7.69%
+     11    10      108.0000   624      117.0000      108.0000    18057    7.69%
+     16    11      108.0000   317      117.0000      108.0000    18735    7.69%
+     23    15      108.0000   365      117.0000      108.0000    33377    7.69%
+     32    12      108.0000   448      117.0000      108.0000    32009    7.69%
+     34    16      108.0000   584      117.0000      108.0000    37212    7.69%
+     42    23      108.0000   395      117.0000      108.0000    44698    7.69%
+     67    42      108.0000   360      117.0000      108.0000    78776    7.69%
+Elapsed time = 10.46 sec. (20182.97 ticks, tree = 0.19 MB, solutions = 2)
+     85    56      108.0000   486      117.0000      108.0000   118406    7.69%
+    142    83      108.0000   378      117.0000      108.0000   136577    7.69%
+    401   203      108.0000   484      117.0000      108.0000   180991    7.69%
+    523   276      108.0000   441      117.0000      108.0000   187829    7.69%
+    675   478      114.0000   315      117.0000      108.0000   238797    7.69%
+    817   626      108.0000   338      117.0000      108.0000   266742    7.69%
+    952   700      108.0000   140      117.0000      108.0000   275708    7.69%
+*  1034+  647                          108.0000      108.0000             0.00%
+   1165   749      108.0000   115      108.0000      108.0000   303028    0.00%
+
+GUB cover cuts applied:  5
+Cover cuts applied:  112
+Implied bound cuts applied:  15
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  22
+
+Root node processing (before b&c):
+  Real time             =    8.59 sec. (16221.05 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    5.90 sec. (12544.52 ticks)
+  Sync time (average)   =    1.13 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   14.49 sec. (28765.57 ticks)
+
+MILP status: Optimal
+Objective: makespan
+Solve time: 14.49 seconds
+Lower bound: 108.00
+Objective value: 108.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	1	59964	82	86	4
+1	2	3	179894	86	109	23
+2	1	3	179894	36	39	3
+2	2	2	119929	39	40	1
+2	3	3	179894	40	46	6
+2	4	2	119929	46	54	8
+3	1	1	59964	4	5	1
+3	2	2	119929	5	21	16
+3	3	1	59964	21	29	8
+3	4	3	179894	29	36	7
+4	1	1	59964	63	66	3
+4	2	2	119929	66	81	15
+4	3	3	179894	81	82	1
+4	4	2	119929	82	86	4
+5	1	1	59964	46	54	8
+5	2	3	179894	54	63	9
+5	3	2	119929	63	66	3
+5	4	1	59964	66	81	15
+6	1	3	179894	1	4	3
+6	2	2	119929	4	5	1
+6	3	1	59964	5	21	16
+6	4	2	119929	21	29	8
+Block intervals are [Start, End), in charging periods.

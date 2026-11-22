@@ -1,0 +1,62 @@
+Instance: C205-25
+Instance file: instances/C205-25.txt
+EVs: 3
+Chargers: 2
+Horizon: 56 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	56	2466000	14
+2	1	56	3823637	22
+3	1	56	3607771	21
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 60 variables, 93 constraints
+ ! Presolve      : 36 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 157.5 (before), 157.5 (after)
+ !  . Memory usage      : 825.7 kB (before), 825.7 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0         60                 -
+ + New bound is 57
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ *            57      208  0.04s        1      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 57 (optimal - effective tol. is 0.00)
+ ! Best bound             : 57
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 12859
+ ! Number of fails        : 718
+ ! Total memory usage     : 6.8 MB (6.6 MB CP Optimizer + 0.1 MB Concert)
+ ! Time spent in solve    : 0.04s (0.04s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 321475.0
+ ! ----------------------------------------------------------------------------
+
+CP status: Optimal
+Objective: makespan
+Solve time: 0.04 seconds
+Lower bound: 56.00
+Objective value: 56.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	1	2	1
+1	2	1	59964	2	3	1
+1	3	2	119929	3	4	1
+1	4	1	59964	4	41	37
+2	1	1	59964	1	2	1
+2	2	2	119929	2	3	1
+2	3	1	59964	3	4	1
+2	4	2	119929	4	34	30
+3	1	2	119929	34	35	1
+3	2	1	59964	35	36	1
+3	3	2	119929	36	41	5
+3	4	3	179894	41	57	16
+Block intervals are [Start, End), in charging periods.

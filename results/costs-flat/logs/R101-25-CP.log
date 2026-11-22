@@ -1,0 +1,49 @@
+Instance: R101-25
+Instance file: instances/R101-25.txt
+EVs: 9
+Chargers: 4
+Horizon: 39 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	32	2574000	15
+2	1	39	2022000	12
+3	1	36	2492000	14
+4	1	30	2540000	15
+5	1	30	2486000	14
+6	1	34	2544000	15
+7	1	27	2030000	12
+8	1	25	2560000	15
+9	1	39	1052000	6
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 181 variables, 269 constraints
+ ! Presolve      : 108 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.02s (0.02s extraction + 0.00s propagation)
+ !  . Log search space  : 564.5 (before), 564.5 (after)
+ !  . Memory usage      : 1.7 MB (before), 1.7 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        181                 -
+ + New bound is 257.6952
+ ! Using failure-directed search.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 257.6952
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 91620351
+ ! Number of fails        : 46211141
+ ! Total memory usage     : 25.5 MB (25.2 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.08s (600.06s engine + 0.02s extraction)
+ ! Search speed (br. / s) : 152685.3
+ ! ----------------------------------------------------------------------------
+
+CP status: Unknown
+Objective: costs
+Solve time: 600.07 seconds
+Lower bound: 257.70

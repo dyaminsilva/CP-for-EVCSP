@@ -1,0 +1,167 @@
+Instance: C202-50
+Instance file: instances/C202-50.txt
+EVs: 6
+Chargers: 2
+Horizon: 115 periods
+Maximum power adjustments: 4
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	115	4349811	25
+2	1	57	2678000	15
+3	1	115	2466000	14
+4	1	115	3337939	19
+5	1	115	2628000	15
+6	1	55	3661738	21
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve modified 6862 coefficients.
+Aggregator did 18 substitutions.
+Reduced MIP has 2079 rows, 7891 columns, and 56952 nonzeros.
+Reduced MIP has 7890 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (83.62 ticks)
+Probing time = 0.01 sec. (7.97 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 2079 rows, 7891 columns, and 56952 nonzeros.
+Reduced MIP has 7890 binaries, 1 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (31.40 ticks)
+Probing time = 0.01 sec. (7.97 ticks)
+Clique table members: 1530.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.24 sec. (451.36 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      108.0000   499                    108.0000     3064         
+*     0+    0                          115.0000      108.0000             6.09%
+      0     0      108.0000   235      115.0000      Cuts: 24     3347    6.09%
+      0     0      108.0000   515      115.0000      Cuts: 24     4475    6.09%
+*     0+    0                          112.0000      108.0000             3.57%
+      0     0      108.0000   505      112.0000      Cuts: 11     5131    3.57%
+      0     0      108.0000   620      112.0000     Cuts: 135     6911    3.57%
+Detecting symmetries...
+      0     2      108.0000   337      112.0000      108.0000     6911    3.57%
+Elapsed time = 6.06 sec. (10996.39 ticks, tree = 0.02 MB, solutions = 2)
+      8     6      108.0000   502      112.0000      108.0000     7944    3.57%
+     30    23      108.0000   550      112.0000      108.0000    10528    3.57%
+     39    30      108.0000   565      112.0000      108.0000    12522    3.57%
+     55    47      108.0000   563      112.0000      108.0000    16744    3.57%
+     99    65      108.0000   428      112.0000      108.0000    27303    3.57%
+    124    77      108.0000   475      112.0000      108.0000    46490    3.57%
+    150    85    infeasible            112.0000      108.0000    61019    3.57%
+    195   113    infeasible            112.0000      108.0000    79995    3.57%
+    248   121      108.0000   472      112.0000      108.0000    93653    3.57%
+    284   117      108.6914   300      112.0000      108.0000   101512    3.57%
+Elapsed time = 8.13 sec. (14277.23 ticks, tree = 0.24 MB, solutions = 2)
+    317   187      108.0000   330      112.0000      108.0000   182613    3.57%
+    520   266      108.0861   293      112.0000      108.0000   202762    3.57%
+    607   403      108.6667   108      112.0000      108.0000   258712    3.57%
+    785   497      109.3536   271      112.0000      108.0000   272877    3.57%
+    910   567      111.0000   192      112.0000      108.0000   289416    3.57%
+   1024   649      108.0000   265      112.0000      108.0000   358789    3.57%
+   1329   716      109.0000   339      112.0000      108.0000   384039    3.57%
+   1477  1025      110.0000   268      112.0000      108.0000   437883    3.57%
+   1781  1098    infeasible            112.0000      108.0000   486530    3.57%
+*  1917  1288      integral     0      111.0000      108.0000   520346    2.70%
+   2083  1235      109.8216   307      111.0000      108.0000   538903    2.70%
+Elapsed time = 12.89 sec. (23903.97 ticks, tree = 14.05 MB, solutions = 3)
+   2201  1249      108.3478   272      111.0000      108.0000   563128    2.70%
+   2321  1403      108.0000   380      111.0000      108.0000   614934    2.70%
+   2453  1444      110.0000   174      111.0000      108.0000   648782    2.70%
+   2611  1535      108.0000   360      111.0000      108.0000   698147    2.70%
+   2743  1641      108.1904   333      111.0000      108.0000   731816    2.70%
+   2983  1796      108.8355   357      111.0000      108.0000   781222    2.70%
+   3150  1923      108.8162   394      111.0000      108.0000   824404    2.70%
+   3226  1976      108.5402   356      111.0000      108.0000   838540    2.70%
+   3316  2049    infeasible            111.0000      108.0000   881106    2.70%
+
+Performing restart 1
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 185 rows and 240 columns.
+MIP Presolve modified 12602 coefficients.
+Reduced MIP has 1894 rows, 7651 columns, and 46641 nonzeros.
+Reduced MIP has 7650 binaries, 1 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (55.80 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 1894 rows, 7651 columns, and 46641 nonzeros.
+Reduced MIP has 7650 binaries, 1 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (26.36 ticks)
+Represolve time = 0.15 sec. (213.58 ticks)
+   3345     0      108.0000   238      111.0000     Covers: 1   925515    2.70%
+   3345     0      108.0000   461      111.0000      Cuts: 53   927419    2.70%
+*  3345+    0                          110.0000      108.0000             1.82%
+   3345     0  -1.00000e+75     0      110.0000      108.0000   927419    1.82%
+   3345     2      108.0000   214      110.0000      108.0000   927419    1.82%
+Elapsed time = 22.22 sec. (43017.70 ticks, tree = 0.02 MB, solutions = 4)
+   3346     3      108.0000   354      110.0000      108.0000   933181    1.82%
+   3349     4      108.0000   403      110.0000      108.0000   936781    1.82%
+   3359    12      108.0000   498      110.0000      108.0000   940466    1.82%
+   3367    12      108.0000   418      110.0000      108.0000   940246    1.82%
+   3378    22      108.0000   599      110.0000      108.0000   951102    1.82%
+   3396    37      108.0000   660      110.0000      108.0000   964397    1.82%
+   3410    43      108.0000   706      110.0000      108.0000   967321    1.82%
+   3439    57      108.0000   426      110.0000      108.0000   975468    1.82%
+   3457    74      108.0000   375      110.0000      108.0000   979952    1.82%
+   3478    92    infeasible            110.0000      108.0000  1002774    1.82%
+Elapsed time = 28.93 sec. (54904.70 ticks, tree = 0.65 MB, solutions = 4)
+   3509   100    infeasible            110.0000      108.0000  1013032    1.82%
+   3599   152      108.0000    97      110.0000      108.0000  1057129    1.82%
+*  3919   187      integral     0      108.0000      108.0000  1070909    0.00%
+   4076   164      108.0000   633      108.0000      108.0000  1063054    0.00%
+
+GUB cover cuts applied:  4
+Cover cuts applied:  53
+Implied bound cuts applied:  2
+Mixed integer rounding cuts applied:  14
+Zero-half cuts applied:  4
+
+Root node processing (before b&c):
+  Real time             =    6.02 sec. (10919.12 ticks)
+Parallel b&c, 8 threads:
+  Real time             =   25.01 sec. (48306.86 ticks)
+  Sync time (average)   =    4.50 sec.
+  Wait time (average)   =    0.01 sec.
+                          ------------
+Total (root+branch&cut) =   31.03 sec. (59225.97 ticks)
+
+MILP status: Optimal
+Objective: makespan
+Solve time: 31.04 seconds
+Lower bound: 108.00
+Objective value: 108.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	76	87	11
+1	2	1	59964	87	94	7
+1	3	2	119929	94	95	1
+1	4	3	179894	95	109	14
+2	1	2	119929	35	38	3
+2	2	3	179894	38	42	4
+2	3	2	119929	42	43	1
+2	4	3	179894	43	48	5
+2	5	1	59964	48	58	10
+3	1	3	179894	1	15	14
+4	1	2	119929	48	58	10
+4	2	3	179894	58	70	12
+5	1	3	179894	70	76	6
+5	2	1	59964	76	87	11
+5	3	2	119929	87	94	7
+5	4	1	59964	94	95	1
+6	1	3	179894	15	18	3
+6	2	2	119929	18	19	1
+6	3	3	179894	19	35	16
+6	4	1	59964	35	38	3
+Block intervals are [Start, End), in charging periods.

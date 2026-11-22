@@ -1,0 +1,58 @@
+Instance: R101-50
+Instance file: instances/R101-50.txt
+EVs: 16
+Chargers: 7
+Horizon: 38 periods
+Maximum power adjustments: 2
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	27	2456000	14
+2	1	38	1328000	8
+3	1	25	2776667	16
+4	1	24	3756179	21
+5	1	35	2886223	17
+6	1	32	2746445	16
+7	1	38	1342000	8
+8	1	30	1446000	9
+9	1	28	2332000	13
+10	1	29	3648246	21
+11	1	38	3237558	18
+12	1	37	1484000	9
+13	1	26	2434000	14
+14	1	25	3688721	21
+15	1	32	440000	3
+16	1	27	2799334	16
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 256 variables, 374 constraints
+ ! Presolve      : 128 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 741.5 (before), 741.5 (after)
+ !  . Memory usage      : 1.8 MB (before), 1.8 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        256                 -
+ + New bound is 38
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ ! Using failure-directed search.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 38
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 576239925
+ ! Number of fails        : 114205276
+ ! Total memory usage     : 26.3 MB (25.8 MB CP Optimizer + 0.4 MB Concert)
+ ! Time spent in solve    : 600.01s (600.00s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 960399.9
+ ! ----------------------------------------------------------------------------
+
+CP status: Unknown
+Objective: makespan
+Solve time: 600.01 seconds
+Lower bound: 37.00

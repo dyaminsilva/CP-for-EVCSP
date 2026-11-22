@@ -1,0 +1,65 @@
+Instance: C109-50
+Instance file: instances/C109-50.txt
+EVs: 5
+Chargers: 3
+Horizon: 34 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	34	1926000	11
+2	1	34	3177113	18
+3	1	34	1986000	12
+4	1	34	3580788	20
+5	1	34	1398000	8
+Initial cost LP bound: 153.81 (0.14 seconds of preprocessing)
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 10389 variables, 7552 constraints
+ ! Presolve      : 1100 extractables eliminated
+ ! TimeLimit            = 599.85
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.17s (0.17s extraction + 0.00s propagation)
+ !  . Log search space  : 11391.3 (before), 11391.3 (after)
+ !  . Memory usage      : 16.4 MB (before), 16.4 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0      10389                 -
+ + New bound is 153.8074
+ ! Using temporal relaxation.
+ *      153.8091     6625  2.22s        8      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 153.8091 (optimal - effective tol. is 0.02)
+ ! Best bound             : 153.8074
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 61578
+ ! Number of fails        : 27975
+ ! Total memory usage     : 227.2 MB (219.0 MB CP Optimizer + 8.2 MB Concert)
+ ! Time spent in solve    : 2.22s (2.05s engine + 0.17s extraction)
+ ! Search speed (br. / s) : 30185.3
+ ! ----------------------------------------------------------------------------
+
+CP+ status: Optimal
+Objective: costs
+Solve time: 2.36 seconds
+Lower bound: 153.81
+Objective value: 153.81
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	9	10	1
+1	2	2	119929	10	11	1
+1	3	1	59964	11	21	10
+1	4	3	179894	21	27	6
+2	1	1	59964	10	11	1
+2	2	2	119929	11	23	12
+2	3	1	59964	23	27	4
+2	4	3	179894	27	35	8
+3	1	1	59964	21	23	2
+3	2	2	119929	23	27	4
+3	3	3	179894	27	35	8
+4	1	3	179894	1	21	20
+5	1	3	179894	1	9	8
+Block intervals are [Start, End), in charging periods.
