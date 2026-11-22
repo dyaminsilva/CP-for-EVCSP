@@ -1,0 +1,74 @@
+Instance: RC207-50
+Instance file: instances/RC207-50.txt
+EVs: 6
+Chargers: 3
+Horizon: 53 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 74955 149911 224867
+
+EV	First	Last	Power sum	Min periods
+1	1	53	3743779	17
+2	1	53	4209525	19
+3	1	53	5477739	25
+4	1	53	3168000	15
+5	1	53	3354000	15
+6	1	53	3581334	16
+Initial cost LP bound: 298.13 (0.09 seconds of preprocessing)
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 20021 variables, 14439 constraints
+ ! Presolve      : 2004 extractables eliminated
+ ! TimeLimit            = 599.90
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.34s (0.34s extraction + 0.00s propagation)
+ !  . Log search space  : 25461.6 (before), 25461.6 (after)
+ !  . Memory usage      : 30.6 MB (before), 30.6 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0      20021                 -
+ + New bound is 298.1289
+ ! Using temporal relaxation.
+ *      298.5105    14010  6.24s        6      (gap is 0.13%)
+ *      298.5104    32782  13.43s       2      (gap is 0.13%)
+ *      298.1357    32598  13.54s       3      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 3 solutions found.
+ ! Best objective         : 298.1357 (optimal - effective tol. is 0.03)
+ ! Best bound             : 298.1289
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 270503
+ ! Number of fails        : 127715
+ ! Total memory usage     : 435.5 MB (419.8 MB CP Optimizer + 15.7 MB Concert)
+ ! Time spent in solve    : 13.56s (13.22s engine + 0.34s extraction)
+ ! Search speed (br. / s) : 20477.1
+ ! ----------------------------------------------------------------------------
+
+CP+ status: Optimal
+Objective: costs
+Solve time: 13.65 seconds
+Lower bound: 298.13
+Objective value: 298.14
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	149911	1	2	1
+1	2	3	224867	2	3	1
+1	3	1	74955	3	48	45
+2	1	3	224867	33	38	5
+2	2	2	149911	38	44	6
+2	3	3	224867	44	54	10
+3	1	1	74955	1	2	1
+3	2	2	149911	2	3	1
+3	3	3	224867	3	4	1
+3	4	2	149911	4	38	34
+4	1	2	149911	38	39	1
+4	2	3	224867	39	44	5
+4	3	2	149911	44	48	4
+4	4	3	224867	48	54	6
+5	1	3	224867	18	33	15
+6	1	3	224867	1	2	1
+6	2	1	74955	2	3	1
+6	3	2	149911	3	4	1
+6	4	3	224867	4	18	14
+Block intervals are [Start, End), in charging periods.

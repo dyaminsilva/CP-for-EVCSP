@@ -1,0 +1,93 @@
+Instance: R112-25
+Instance file: instances/R112-25.txt
+EVs: 4
+Chargers: 4
+Horizon: 32 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	28	3850621	22
+2	1	32	4309336	24
+3	1	32	4066487	23
+4	1	31	4403778	25
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 81 variables, 124 constraints
+ ! Presolve      : 48 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 223.0 (before), 223.0 (after)
+ !  . Memory usage      : 1.2 MB (before), 1.2 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0         81                 -
+ + New bound is 210.4234
+ *      211.6813      642  0.14s        3      (gap is 0.59%)
+ *      211.3934      667  0.14s        6      (gap is 0.46%)
+ *      211.3906    10340  0.25s        1      (gap is 0.46%)
+ *      211.3771    10362  0.25s        3      (gap is 0.45%)
+ *      211.3762    10636  0.25s        3      (gap is 0.45%)
+ *      211.3752    10198  0.29s        4      (gap is 0.45%)
+ *      211.3750    10361  0.29s        4      (gap is 0.45%)
+ *      211.3750    10773  0.29s        1      (gap is 0.45%)
+ *      211.0752    11598  0.32s        1      (gap is 0.31%)
+ ! Using failure-directed search.
+ *      210.7754    14083  0.49s        5      (gap is 0.17%)
+ *      210.7754    16922  0.52s        2      (gap is 0.17%)
+ *      210.7754    15162  0.52s        3      (gap is 0.17%)
+ *      210.7754    14450  0.52s        4      (gap is 0.17%)
+ *      210.7754    35984  1.04s        8      (gap is 0.17%)
+ *      210.4761    29732  1.33s        4      (gap is 0.03%)
+ *      210.4760    30029  1.33s        4      (gap is 0.02%)
+ *      210.4759    35611  1.36s        5      (gap is 0.02%)
+ *      210.4757    35977  1.36s        5      (gap is 0.02%)
+ *      210.4756     122k  4.27s        4      (gap is 0.02%)
+ ! Time = 4.27s, Average fail depth = 16, Memory usage = 13.8 MB
+ ! Current bound is 210.4234 (gap is 0.02%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      210.4756     126k  4.30s        6      (gap is 0.02%)
+ *      210.4756     117k  4.30s        3      (gap is 0.02%)
+ *      210.4756     183k  8.17s        6      (gap is 0.02%)
+ *      210.4756     188k  8.22s        8      (gap is 0.02%)
+ *      210.4756     183k  8.39s        4      (gap is 0.02%)
+ *      210.4756     187k  8.52s        7      (gap is 0.02%)
+ *      210.4756     419k  17.09s       1      (gap is 0.02%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 26 solutions found.
+ ! Best objective         : 210.4756 (gap is 0.02%)
+ ! Best bound             : 210.4234
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 179893419
+ ! Number of fails        : 85750954
+ ! Total memory usage     : 60.3 MB (60.1 MB CP Optimizer + 0.2 MB Concert)
+ ! Time spent in solve    : 600.05s (600.05s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 299802.4
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: costs
+Solve time: 600.04 seconds
+Lower bound: 210.42
+Objective value: 210.48
+Relative gap: 0.02%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	1	2	1
+1	2	2	119929	2	3	1
+1	3	3	179894	3	11	8
+1	4	2	119929	11	29	18
+2	1	3	179894	1	2	1
+2	2	2	119929	2	23	21
+2	3	3	179894	23	30	7
+2	4	2	119929	30	33	3
+3	1	1	59964	1	2	1
+3	2	3	179894	2	3	1
+3	3	2	119929	3	29	26
+3	4	3	179894	29	33	4
+4	1	2	119929	1	11	10
+4	2	3	179894	11	23	12
+4	3	2	119929	23	32	9
+Block intervals are [Start, End), in charging periods.

@@ -1,0 +1,119 @@
+Instance: R109-50
+Instance file: instances/R109-50.txt
+EVs: 11
+Chargers: 7
+Horizon: 31 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	31	3271558	19
+2	1	31	2636000	15
+3	1	31	2454000	14
+4	1	31	2054000	12
+5	1	25	4349811	25
+6	1	31	3594280	20
+7	1	31	776000	5
+8	1	31	2958001	17
+9	1	31	2388000	14
+10	1	26	4255370	24
+11	1	31	3999029	23
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve eliminated 0 rows and 1 columns.
+MIP Presolve modified 3862 coefficients.
+Aggregator did 33 substitutions.
+Reduced MIP has 1116 rows, 3756 columns, and 27480 nonzeros.
+Reduced MIP has 3756 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (31.35 ticks)
+Probing time = 0.01 sec. (4.00 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1116 rows, 3756 columns, and 27480 nonzeros.
+Reduced MIP has 3756 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (13.12 ticks)
+Probing time = 0.01 sec. (3.77 ticks)
+Clique table members: 16037.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.13 sec. (305.87 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       31.0000   321                     31.0000     3011         
+      0     0       31.0000   272                    Cuts: 27     4208         
+      0     0       31.0000   168                    Cuts: 10     4962         
+      0     0       31.0000   131                     Cuts: 6     5695         
+      0     0       31.0000   200                    Cuts: 16     6055         
+      0     0       31.0000    88                     Cuts: 8     6535         
+Detecting symmetries...
+      0     0       31.0000   201                    Cuts: 16     7478         
+*     0+    0                           31.0000       31.0000             0.00%
+      0     0        cutoff             31.0000       31.0000     7478    0.00%
+Elapsed time = 2.21 sec. (4794.80 ticks, tree = 0.01 MB, solutions = 1)
+
+GUB cover cuts applied:  8
+Cover cuts applied:  5
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  3
+Zero-half cuts applied:  3
+
+Root node processing (before b&c):
+  Real time             =    2.21 sec. (4795.03 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    2.21 sec. (4795.03 ticks)
+
+MILP status: Optimal
+Objective: makespan
+Solve time: 2.21 seconds
+Lower bound: 31.00
+Objective value: 31.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	1	59964	13	14	1
+1	2	3	179894	14	32	18
+2	1	3	179894	1	15	14
+2	2	2	119929	15	16	1
+3	1	2	119929	17	18	1
+3	2	3	179894	18	23	5
+3	3	2	119929	23	26	3
+3	4	3	179894	26	32	6
+4	1	3	179894	1	13	12
+5	1	3	179894	1	9	8
+5	2	2	119929	9	10	1
+5	3	3	179894	10	26	16
+6	1	3	179894	1	6	5
+6	2	2	119929	6	14	8
+6	3	1	59964	14	26	12
+6	4	3	179894	26	32	6
+7	1	3	179894	27	31	4
+7	2	2	119929	31	32	1
+8	1	3	179894	15	18	3
+8	2	2	119929	18	19	1
+8	3	3	179894	19	32	13
+9	1	3	179894	1	10	9
+9	2	2	119929	10	11	1
+9	3	3	179894	11	14	3
+9	4	2	119929	14	15	1
+10	1	3	179894	1	9	8
+10	2	2	119929	9	11	2
+10	3	1	59964	11	13	2
+10	4	3	179894	13	27	14
+11	1	1	59964	7	9	2
+11	2	3	179894	9	19	10
+11	3	2	119929	19	23	4
+11	4	3	179894	23	32	9
+Block intervals are [Start, End), in charging periods.

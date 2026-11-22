@@ -1,0 +1,115 @@
+Instance: R105-50
+Instance file: instances/R105-50.txt
+EVs: 12
+Chargers: 7
+Horizon: 33 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	29	3999029	23
+2	1	33	3150669	18
+3	1	27	2280000	13
+4	1	28	3048668	17
+5	1	33	776000	5
+6	1	27	4039504	23
+7	1	27	2572000	15
+8	1	32	4012520	23
+9	1	30	2848445	16
+10	1	32	2863557	16
+11	1	33	2961779	17
+12	1	32	2266000	13
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve eliminated 35 rows and 1 columns.
+MIP Presolve modified 6042 coefficients.
+Aggregator did 36 substitutions.
+Reduced MIP has 1223 rows, 4180 columns, and 33175 nonzeros.
+Reduced MIP has 4179 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (63.13 ticks)
+Probing time = 0.02 sec. (4.04 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1223 rows, 4180 columns, and 33175 nonzeros.
+Reduced MIP has 4179 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (16.19 ticks)
+Probing time = 0.00 sec. (3.82 ticks)
+Clique table members: 19139.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 1.54 sec. (3784.52 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      437.1422   321                    437.1422    48967         
+      0     0      437.1422   218                    Cuts: 49    50336         
+*     0+    0                          437.1422      437.1422             0.00%
+      0     0        cutoff            437.1422      437.1422    50336    0.00%
+Elapsed time = 2.88 sec. (6830.79 ticks, tree = 0.01 MB, solutions = 1)
+
+GUB cover cuts applied:  3
+Flow cuts applied:  1
+Zero-half cuts applied:  5
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    2.88 sec. (6831.04 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    2.88 sec. (6831.04 ticks)
+
+MILP status: Optimal
+Objective: costs
+Solve time: 2.88 seconds
+Lower bound: 437.14
+Objective value: 437.14
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	1	19	18
+1	2	1	59964	19	20	1
+1	3	3	179894	20	30	10
+2	1	3	179894	16	18	2
+2	2	2	119929	18	19	1
+2	3	3	179894	19	34	15
+3	1	2	119929	1	2	1
+3	2	3	179894	2	11	9
+3	3	2	119929	11	16	5
+4	1	3	179894	1	18	17
+5	1	1	59964	29	30	1
+5	2	3	179894	30	34	4
+6	1	2	119929	1	4	3
+6	2	1	59964	4	5	1
+6	3	3	179894	5	24	19
+6	4	1	59964	24	28	4
+7	1	3	179894	1	2	1
+7	2	2	119929	2	4	2
+7	3	3	179894	4	16	12
+8	1	3	179894	1	5	4
+8	2	1	59964	5	11	6
+8	3	2	119929	11	28	17
+8	4	3	179894	28	33	5
+9	1	3	179894	1	17	16
+10	1	2	119929	16	18	2
+10	2	3	179894	18	29	11
+10	3	2	119929	29	30	1
+10	4	3	179894	30	33	3
+11	1	3	179894	17	20	3
+11	2	2	119929	20	21	1
+11	3	3	179894	21	34	13
+12	1	3	179894	18	20	2
+12	2	2	119929	20	21	1
+12	3	1	59964	21	24	3
+12	4	3	179894	24	33	9
+Block intervals are [Start, End), in charging periods.

@@ -1,0 +1,50 @@
+Instance: RC103-50
+Instance file: instances/RC103-50.txt
+EVs: 8
+Chargers: 5
+Horizon: 34 periods
+Maximum power adjustments: 4
+Positive power levels: 3
+Power levels: 74955 149911 224867
+
+EV	First	Last	Power sum	Min periods
+1	1	34	2870000	13
+2	1	27	3517112	16
+3	1	25	3044000	14
+4	1	24	3668224	17
+5	1	31	2824000	13
+6	1	34	3152000	15
+7	1	25	5180923	24
+8	1	29	4209525	19
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 192 variables, 286 constraints
+ ! Presolve      : 128 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 510.0 (before), 510.0 (after)
+ !  . Memory usage      : 1.6 MB (before), 1.6 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        192                 -
+ + New bound is 33
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ ! Using failure-directed search.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 33
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 598311981
+ ! Number of fails        : 103561117
+ ! Total memory usage     : 24.4 MB (24.1 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.00s (600.00s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 997203.3
+ ! ----------------------------------------------------------------------------
+
+CP status: Unknown
+Objective: makespan
+Solve time: 600.00 seconds
+Lower bound: 32.00

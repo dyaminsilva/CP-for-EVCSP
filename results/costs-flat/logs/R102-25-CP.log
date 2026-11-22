@@ -1,0 +1,73 @@
+Instance: R102-25
+Instance file: instances/R102-25.txt
+EVs: 8
+Chargers: 4
+Horizon: 35 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	35	2372000	14
+2	1	28	2622000	15
+3	1	35	2648000	15
+4	1	35	2294000	13
+5	1	30	3275336	19
+6	1	35	1104000	7
+7	1	29	1792000	10
+8	1	25	2526000	15
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 161 variables, 240 constraints
+ ! Presolve      : 96 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.02s (0.02s extraction + 0.00s propagation)
+ !  . Log search space  : 498.3 (before), 498.3 (after)
+ !  . Memory usage      : 1.6 MB (before), 1.6 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        161                 -
+ + New bound is 236.1082
+ ! Using failure-directed search.
+ *      236.1256    2146k  283.90s      1      (gap is 0.01%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 236.1256 (optimal - effective tol. is 0.02)
+ ! Best bound             : 236.1082
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 53453597
+ ! Number of fails        : 27192140
+ ! Total memory usage     : 23.3 MB (23.0 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 283.90s (283.88s engine + 0.02s extraction)
+ ! Search speed (br. / s) : 188296.5
+ ! ----------------------------------------------------------------------------
+
+CP status: Optimal
+Objective: costs
+Solve time: 283.89 seconds
+Lower bound: 236.11
+Objective value: 236.13
+Relative gap: 0.01%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	21	24	3
+1	2	2	119929	24	29	5
+1	3	3	179894	29	36	7
+2	1	3	179894	1	5	4
+2	2	2	119929	5	21	16
+3	1	3	179894	5	6	1
+3	2	1	59964	6	30	24
+3	3	3	179894	30	36	6
+4	1	3	179894	23	36	13
+5	1	3	179894	11	23	12
+5	2	2	119929	23	24	1
+5	3	3	179894	24	29	5
+5	4	2	119929	29	30	1
+6	1	3	179894	1	5	4
+6	2	1	59964	5	6	1
+6	3	3	179894	6	8	2
+7	1	3	179894	1	11	10
+8	1	3	179894	8	21	13
+8	2	2	119929	21	23	2
+Block intervals are [Start, End), in charging periods.

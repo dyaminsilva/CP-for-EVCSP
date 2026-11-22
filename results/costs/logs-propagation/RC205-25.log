@@ -1,0 +1,64 @@
+Instance: RC205-25
+Instance file: instances/RC205-25.txt
+EVs: 6
+Chargers: 2
+Horizon: 91 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	91	2886223	17
+2	1	91	1848000	11
+3	1	60	2598000	15
+4	1	91	2942890	17
+5	1	70	3128002	18
+6	1	91	2757778	16
+Initial cost LP bound: 205.53 (0.18 seconds of preprocessing)
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 33044 variables, 23649 constraints
+ ! Presolve      : 3060 extractables eliminated
+ ! TimeLimit            = 599.80
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.59s (0.59s extraction + 0.00s propagation)
+ !  . Log search space  : 35573.1 (before), 35573.1 (after)
+ !  . Memory usage      : 45.1 MB (before), 45.1 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0      33044                 -
+ + New bound is 205.5256
+ ! Using temporal relaxation.
+ *      205.5427    1320k  292.07s      1      (gap is 0.01%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 205.5427 (optimal - effective tol. is 0.02)
+ ! Best bound             : 205.5256
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 9958872
+ ! Number of fails        : 4927414
+ ! Total memory usage     : 659.5 MB (633.4 MB CP Optimizer + 26.1 MB Concert)
+ ! Time spent in solve    : 292.11s (291.52s engine + 0.59s extraction)
+ ! Search speed (br. / s) : 34161.9
+ ! ----------------------------------------------------------------------------
+
+CP+ status: Optimal
+Objective: costs
+Solve time: 292.32 seconds
+Lower bound: 205.53
+Objective value: 205.54
+Relative gap: 0.01%
+EV	Block	Level	Power	Start	End	Duration
+1	1	1	59964	46	65	19
+1	2	2	119929	65	66	1
+1	3	3	179894	66	67	1
+1	4	1	59964	67	92	25
+2	1	1	59964	1	32	31
+3	1	2	119929	1	23	22
+4	1	2	119929	67	92	25
+5	1	1	59964	32	46	14
+5	2	2	119929	46	65	19
+5	3	1	59964	65	66	1
+6	1	2	119929	23	46	23
+Block intervals are [Start, End), in charging periods.

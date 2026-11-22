@@ -1,0 +1,131 @@
+Instance: RC105-50
+Instance file: instances/RC105-50.txt
+EVs: 9
+Chargers: 5
+Horizon: 33 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 74955 149911 224867
+
+EV	First	Last	Power sum	Min periods
+1	1	33	3240000	15
+2	1	23	2494000	12
+3	1	32	3054000	14
+4	1	33	2096000	10
+5	1	28	4034669	18
+6	1	30	3962891	18
+7	1	26	4046003	18
+8	1	24	3042000	14
+9	1	31	2836000	13
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve eliminated 34 rows and 1 columns.
+MIP Presolve modified 4086 coefficients.
+Aggregator did 27 substitutions.
+Reduced MIP has 905 rows, 3055 columns, and 24223 nonzeros.
+Reduced MIP has 3054 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (39.40 ticks)
+Probing time = 0.01 sec. (3.82 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 905 rows, 3055 columns, and 24223 nonzeros.
+Reduced MIP has 3054 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.14 ticks)
+Probing time = 0.00 sec. (3.64 ticks)
+Clique table members: 13708.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.47 sec. (884.61 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      364.2842   325                    364.2842    10485         
+      0     0      364.2842   257                     Cuts: 7    10703         
+      0     0      364.2842   403                    Cuts: 69    11319         
+Detecting symmetries...
+      0     2      364.2842   169                    364.2842    11319         
+Elapsed time = 1.64 sec. (3459.81 ticks, tree = 0.02 MB, solutions = 0)
+      7     7      364.2842   173                    364.2842    13876         
+     28     8      364.2842   150                    364.2842    14368         
+     43    35      364.2842   159                    364.2842    34830         
+     71    56      364.2842   153                    364.2842    46974         
+     93    77      364.2842   187                    364.2842    62999         
+    119    92      364.2842    67                    364.2842    73285         
+    145   127      364.2842   225                    364.2842    92570         
+    183   157      364.2842   164                    364.2842   109107         
+    237   163      364.2842   177                    364.2842   112299         
+    410   291      364.2842   216                    364.2842   162061         
+Elapsed time = 3.07 sec. (6657.90 ticks, tree = 1.01 MB, solutions = 0)
+    534   388      364.2842   239                    364.2842   212229         
+    651   482      364.2842   200                    364.2842   280557         
+    800   541    infeasible                          364.2842   320310         
+    923   652      364.2842   192                    364.2842   399779         
+   1073   701      364.2842   123                    364.2842   440251         
+   1193   816      364.2843   235                    364.2842   523008         
+   1296   857      364.2843   186                    364.2842   570146         
+   1409   921      364.2842    66                    364.2842   631415         
+   1505   981      364.2843   118                    364.2842   708593         
+*  1603  1015      integral     0      364.2842      364.2842   754172    0.00%
+Elapsed time = 7.48 sec. (16131.82 ticks, tree = 6.00 MB, solutions = 1)
+
+GUB cover cuts applied:  2
+Cover cuts applied:  172
+Mixed integer rounding cuts applied:  6
+Zero-half cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    1.63 sec. (3440.28 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    6.15 sec. (13437.55 ticks)
+  Sync time (average)   =    0.96 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    7.77 sec. (16877.83 ticks)
+
+MILP status: Optimal
+Objective: costs
+Solve time: 7.78 seconds
+Lower bound: 364.28
+Objective value: 364.28
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	224867	16	18	2
+1	2	2	149911	18	28	10
+1	3	3	224867	28	34	6
+2	1	3	224867	1	2	1
+2	2	1	74955	2	7	5
+2	3	2	149911	7	8	1
+2	4	3	224867	8	16	8
+3	1	3	224867	19	30	11
+3	2	2	149911	30	31	1
+3	3	3	224867	31	33	2
+4	1	3	224867	23	28	5
+4	2	1	74955	28	30	2
+4	3	2	149911	30	31	1
+4	4	3	224867	31	34	3
+5	1	2	149911	1	2	1
+5	2	3	224867	2	7	5
+5	3	2	149911	7	18	11
+5	4	3	224867	18	23	5
+6	1	2	149911	1	8	7
+6	2	3	224867	8	11	3
+6	3	1	74955	11	26	15
+6	4	3	224867	26	31	5
+7	1	3	224867	1	19	18
+8	1	2	149911	1	2	1
+8	2	3	224867	2	8	6
+8	3	1	74955	8	11	3
+8	4	3	224867	11	17	6
+9	1	3	224867	17	26	9
+9	2	1	74955	26	28	2
+9	3	2	149911	28	31	3
+9	4	3	224867	31	32	1
+Block intervals are [Start, End), in charging periods.

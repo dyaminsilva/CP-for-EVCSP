@@ -1,0 +1,103 @@
+Instance: R112-50
+Instance file: instances/R112-50.txt
+EVs: 7
+Chargers: 7
+Horizon: 26 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	26	3301780	19
+2	1	26	4120453	23
+3	1	26	3945062	22
+4	1	26	4403778	25
+5	1	26	4214895	24
+6	1	26	3850621	22
+7	1	26	4012520	23
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 141 variables, 211 constraints
+ ! Presolve      : 84 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 389.3 (before), 389.3 (after)
+ !  . Memory usage      : 1.7 MB (before), 1.7 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        141                 -
+ + New bound is 356.1051
+ ! Using failure-directed search.
+ *      356.2083    2428k  389.45s      1      (gap is 0.03%)
+ *      356.2005    9927k  391.79s      7      (gap is 0.03%)
+ *      356.1982    9928k  391.86s      7      (gap is 0.03%)
+ *      356.1968    9929k  391.94s      7      (gap is 0.03%)
+ *      356.1927    9929k  391.94s      7      (gap is 0.02%)
+ *      356.1920    9929k  391.94s      7      (gap is 0.02%)
+ *      356.1905    9929k  391.94s      7      (gap is 0.02%)
+ *      356.1903    9929k  391.94s      7      (gap is 0.02%)
+ *      356.1898    9929k  391.94s      7      (gap is 0.02%)
+ *      356.1898    2445k  394.22s      1      (gap is 0.02%)
+ *      356.1898    9778k  401.09s      6      (gap is 0.02%)
+ *      356.1898   10191k  404.01s      5      (gap is 0.02%)
+ *      356.1898   11173k  416.74s      8      (gap is 0.02%)
+ *      356.1898   11164k  431.83s      4      (gap is 0.02%)
+ *      356.1898   12512k  447.84s      2      (gap is 0.02%)
+ *      356.1898    6273k  516.24s      1      (gap is 0.02%)
+ *      356.1898   15020k  516.27s      2      (gap is 0.02%)
+ *      356.1897   15020k  516.27s      2      (gap is 0.02%)
+ *      356.1897   14290k  516.27s      4      (gap is 0.02%)
+ ! Time = 516.27s, Average fail depth = 29, Memory usage = 26.1 MB
+ ! Current bound is 356.1051 (gap is 0.02%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      356.1897   13758k  516.33s      6      (gap is 0.02%)
+ *      356.1897   15716k  559.90s      5      (gap is 0.02%)
+ *      356.1897    7876k  560.22s      1      (gap is 0.02%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 22 solutions found.
+ ! Best objective         : 356.1897 (gap is 0.02%)
+ ! Best bound             : 356.1051
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 130898456
+ ! Number of fails        : 64742612
+ ! Total memory usage     : 35.4 MB (35.1 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.09s (600.09s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 218135.0
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: costs
+Solve time: 600.09 seconds
+Lower bound: 356.11
+Objective value: 356.19
+Relative gap: 0.02%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	1	3	2
+1	2	2	119929	3	4	1
+1	3	3	179894	4	6	2
+1	4	2	119929	6	27	21
+2	1	3	179894	1	5	4
+2	2	2	119929	5	6	1
+2	3	3	179894	6	19	13
+2	4	2	119929	19	27	8
+3	1	1	59964	1	2	1
+3	2	3	179894	2	6	4
+3	3	2	119929	6	16	10
+3	4	3	179894	16	27	11
+4	1	3	179894	1	4	3
+4	2	2	119929	4	8	4
+4	3	3	179894	8	27	19
+5	1	2	119929	1	3	2
+5	2	1	59964	3	5	2
+5	3	2	119929	5	6	1
+5	4	3	179894	6	27	21
+6	1	3	179894	1	2	1
+6	2	1	59964	2	3	1
+6	3	3	179894	3	16	13
+6	4	2	119929	16	27	11
+7	1	3	179894	1	8	7
+7	2	2	119929	8	19	11
+7	3	3	179894	19	27	8
+Block intervals are [Start, End), in charging periods.

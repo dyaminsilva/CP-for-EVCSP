@@ -14,3 +14,6 @@ Each vehicle row is: id  first_period  last_period  required_power
 Both window endpoints are inclusive. required_power is the minimum sum of
 power over occupied periods, already adjusted for the charging curve; it is
 not kWh. GRID_CAPACITY and POWER_LEVELS use the same unit (1 unit = 0.6 kW).
+
+Power values must use ordinary decimal notation with at most four decimal
+places (no scientific notation).

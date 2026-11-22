@@ -1,0 +1,190 @@
+Instance: RC202-25
+Instance file: instances/RC202-25.txt
+EVs: 5
+Chargers: 2
+Horizon: 80 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	80	1948000	11
+2	1	76	3052446	17
+3	1	80	2886223	17
+4	1	80	3580788	20
+5	1	44	2598000	15
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve eliminated 0 rows and 1 columns.
+MIP Presolve modified 5206 coefficients.
+Aggregator did 15 substitutions.
+Reduced MIP has 1416 rows, 4891 columns, and 43044 nonzeros.
+Reduced MIP has 4890 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (77.42 ticks)
+Probing time = 0.01 sec. (6.27 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1416 rows, 4891 columns, and 43044 nonzeros.
+Reduced MIP has 4890 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (23.18 ticks)
+Probing time = 0.00 sec. (6.27 ticks)
+Clique table members: 2164.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 1.58 sec. (3930.94 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      178.0940   385                    178.0940    34284         
+      0     0      178.0940   453                    Cuts: 49    35514         
+      0     0      178.0940   135                     Cuts: 8    36333         
+      0     0      178.0940   258                    Cuts: 35    37151         
+Detecting symmetries...
+      0     2      178.0940   102                    178.0940    37151         
+Elapsed time = 4.43 sec. (10617.79 ticks, tree = 0.02 MB, solutions = 0)
+      2     4      178.0943   197                    178.0940    39377         
+     16    16      178.0943   166                    178.0940    42829         
+     22    14      179.2937   303                    178.0940    42714         
+     33    23      178.0943   506                    178.0940    54235         
+     43    41      178.0944   298                    178.0940    85939         
+     56    50      178.0944   278                    178.0940   101939         
+     68    57      178.0944   176                    178.0940   107336         
+     81    70      178.0944   168                    178.0940   124544         
+    103    80      178.0943   214                    178.0940   140332         
+    148   108      178.0943   173                    178.0940   166100         
+Elapsed time = 5.90 sec. (13980.47 ticks, tree = 0.48 MB, solutions = 0)
+    190   152      178.0944   242                    178.0940   224986         
+    222   153      178.6940   278                    178.0940   230985         
+    261   204      178.0944   263                    178.0940   282367         
+    410   249      178.0940   263                    178.0940   312980         
+    530   349      178.0944   123                    178.0940   365012         
+    612   387      178.0940   197                    178.0940   398331         
+*   654+  405                          179.2936      178.0940             0.67%
+*   677   442      integral     0      178.3942      178.0940   449074    0.17%
+    767   441      178.0943   299      178.3942      178.0940   470560    0.17%
+    834   484      178.0943   209      178.3942      178.0940   511750    0.17%
+   1004   529      178.0945   274      178.3942      178.0940   545685    0.17%
+Elapsed time = 10.13 sec. (23258.73 ticks, tree = 4.81 MB, solutions = 2)
+   1125   575      178.0940   265      178.3942      178.0940   572152    0.17%
+   1205   666      178.0940   194      178.3942      178.0940   629323    0.17%
+   1261   744      178.0940   359      178.3942      178.0940   691021    0.17%
+   1344   771      178.0940   236      178.3942      178.0940   708388    0.17%
+   1555   859      178.0940   374      178.3942      178.0940   766652    0.17%
+   1704  1020      178.0940   250      178.3942      178.0940   790366    0.17%
+   1890  1181      178.0944   229      178.3942      178.0940   860591    0.17%
+   2056  1285      178.0943   234      178.3942      178.0940   903207    0.17%
+   2190  1449      178.0943    91      178.3942      178.0940   960274    0.17%
+   2414  1517      178.0940   191      178.3942      178.0940   986145    0.17%
+Elapsed time = 14.19 sec. (32859.81 ticks, tree = 18.24 MB, solutions = 2)
+   2508  1645      178.0940   247      178.3942      178.0940  1039325    0.17%
+   2643  1705      178.0940   168      178.3942      178.0940  1087448    0.17%
+   3045  1781        cutoff            178.3942      178.0940  1106200    0.17%
+   3455  2046        cutoff            178.3942      178.0940  1169975    0.17%
+   3677  2044      178.0943   168      178.3942      178.0940  1177559    0.17%
+
+Performing restart 1
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 80 rows and 0 columns.
+MIP Presolve modified 7670 coefficients.
+Reduced MIP has 1336 rows, 4891 columns, and 37611 nonzeros.
+Reduced MIP has 4890 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (36.28 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 1336 rows, 4891 columns, and 37611 nonzeros.
+Reduced MIP has 4890 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (20.50 ticks)
+Represolve time = 0.11 sec. (148.43 ticks)
+   3678     0      178.0940   315      178.3942       Cuts: 5  1269370    0.17%
+   3678     0      178.0940   384      178.3942      Cuts: 80  1270028    0.17%
+*  3678+    0                          178.3941      178.0940             0.17%
+   3678     0      178.0940   213      178.3941   ZeroHalf: 1  1270375    0.17%
+   3678     0      178.0940   306      178.3941     Cuts: 129  1271223    0.17%
+   3678     2      178.0940   266      178.3941      178.0940  1271223    0.17%
+   3684     8      178.0943   240      178.3941      178.0940  1276655    0.17%
+   3699    18      178.0940   332      178.3941      178.0940  1279112    0.17%
+   3707    25      178.0940   329      178.3941      178.0940  1288567    0.17%
+   3734    43      178.0943   302      178.3941      178.0940  1293766    0.17%
+Elapsed time = 22.94 sec. (49880.73 ticks, tree = 0.19 MB, solutions = 3)
+   3811    75      178.0940   189      178.3941      178.0940  1303115    0.17%
+   3924   128        cutoff            178.3941      178.0940  1330015    0.17%
+   4031   236      178.0941   153      178.3941      178.0940  1385224    0.17%
+   4113   272      178.0941   315      178.3941      178.0940  1400060    0.17%
+   4281   337      178.0940   146      178.3941      178.0940  1424289    0.17%
+   4643   486      178.0941    97      178.3941      178.0940  1469207    0.17%
+   4978   647      178.3146   143      178.3941      178.0940  1487505    0.17%
+   5155   859      178.0941   155      178.3941      178.0940  1543195    0.17%
+   5344   962      178.0940   171      178.3941      178.0940  1572338    0.17%
+   5645  1108      178.1171   102      178.3941      178.0940  1602560    0.17%
+Elapsed time = 28.25 sec. (59464.55 ticks, tree = 11.53 MB, solutions = 3)
+   6038  1381      178.0945   198      178.3941      178.0940  1662380    0.17%
+   6266  1623      178.1107   155      178.3941      178.0940  1698800    0.17%
+   6684  1761      178.1280   173      178.3941      178.0940  1723693    0.17%
+   7369  2272    infeasible            178.3941      178.0940  1769800    0.17%
+   7629  2457      178.3939    78      178.3941      178.0940  1790186    0.17%
+   7995  2627      178.3939    81      178.3941      178.0940  1809680    0.17%
+*  8440  2937      integral     0      178.3939      178.0940  1864904    0.17%
+   8507  2958      178.0941    95      178.3939      178.0940  1859936    0.17%
+   8691  3134      178.1999   110      178.3939      178.0940  1899065    0.17%
+   8781  3213      178.0940   165      178.3939      178.0940  1939205    0.17%
+   8968  3271      178.0943   120      178.3939      178.0940  1954918    0.17%
+Elapsed time = 33.59 sec. (69020.26 ticks, tree = 31.91 MB, solutions = 4)
+   9269  3422      178.0941   236      178.3939      178.0940  1989114    0.17%
+   9543  3662      178.0941   212      178.3939      178.0940  2042756    0.17%
+   9706  3720        cutoff            178.3939      178.0940  2060874    0.17%
+   9872  3890        cutoff            178.3939      178.0940  2092115    0.17%
+* 10011  3982      integral     0      178.0943      178.0940  2117540    0.00%
+
+GUB cover cuts applied:  6
+Cover cuts applied:  37
+Implied bound cuts applied:  16
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  7
+Zero-half cuts applied:  17
+
+Root node processing (before b&c):
+  Real time             =    4.35 sec. (10432.51 ticks)
+Parallel b&c, 8 threads:
+  Real time             =   32.00 sec. (63579.17 ticks)
+  Sync time (average)   =    4.37 sec.
+  Wait time (average)   =    0.01 sec.
+                          ------------
+Total (root+branch&cut) =   36.35 sec. (74011.67 ticks)
+
+MILP status: Optimal
+Objective: costs
+Solve time: 36.36 seconds
+Lower bound: 178.09
+Objective value: 178.09
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	1	2	1
+1	2	2	119929	2	9	7
+1	3	1	59964	9	17	8
+1	4	2	119929	17	21	4
+2	1	2	119929	21	32	11
+2	2	1	59964	32	35	3
+2	3	3	179894	35	40	5
+2	4	1	59964	40	51	11
+3	1	1	59964	51	55	4
+3	2	2	119929	55	61	6
+3	3	1	59964	61	68	7
+3	4	2	119929	68	81	13
+4	1	2	119929	40	54	14
+4	2	1	59964	54	61	7
+4	3	2	119929	61	68	7
+4	4	1	59964	68	79	11
+5	1	1	59964	2	9	7
+5	2	2	119929	9	17	8
+5	3	1	59964	17	32	15
+5	4	2	119929	32	35	3
+Block intervals are [Start, End), in charging periods.

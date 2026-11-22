@@ -3,7 +3,7 @@ set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
 # Path to the IBM ILOG CPLEX Optimization Studio installation.
-studio=/opt/ibm/ILOG/CPLEX_Studio221
+studio="${CPLEX_STUDIO_DIR:-/opt/ibm/ILOG/CPLEX_Studio221}"
 
 g++ -std=c++20 -O2 -DNDEBUG -DIL_STD -m64 -fPIC -fno-strict-aliasing \
     -Icpp \
@@ -13,8 +13,11 @@ g++ -std=c++20 -O2 -DNDEBUG -DIL_STD -m64 -fPIC -fno-strict-aliasing \
     cpp/main.cpp \
     cpp/model/EVCSP.cpp \
     cpp/model/ChargingCommon.cpp \
-    cpp/model/ChargingCP.cpp \
-    cpp/model/ChargingMILP.cpp \
+    cpp/model/CP.cpp \
+    cpp/model/CostPropagation.cpp \
+    cpp/model/MILP.cpp \
+    cpp/model/ChargingNetwork.cpp \
+    cpp/model/CostLP.cpp \
     -L"$studio/cplex/lib/x86-64_linux/static_pic" \
     -L"$studio/cpoptimizer/lib/x86-64_linux/static_pic" \
     -L"$studio/concert/lib/x86-64_linux/static_pic" \

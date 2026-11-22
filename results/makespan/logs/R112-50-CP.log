@@ -1,0 +1,76 @@
+Instance: R112-50
+Instance file: instances/R112-50.txt
+EVs: 7
+Chargers: 7
+Horizon: 26 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	26	3301780	19
+2	1	26	4120453	23
+3	1	26	3945062	22
+4	1	26	4403778	25
+5	1	26	4214895	24
+6	1	26	3850621	22
+7	1	26	4012520	23
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 140 variables, 209 constraints
+ ! Presolve      : 84 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 370.0 (before), 370.0 (after)
+ !  . Memory usage      : 1.3 MB (before), 1.3 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        140                 -
+ + New bound is 27
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ ! Using failure-directed search.
+ *            27    2300k  58.02s       1      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 27 (optimal - effective tol. is 0.00)
+ ! Best bound             : 27
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 57760922
+ ! Number of fails        : 13113180
+ ! Total memory usage     : 14.3 MB (14.0 MB CP Optimizer + 0.2 MB Concert)
+ ! Time spent in solve    : 58.02s (58.02s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 995706.3
+ ! ----------------------------------------------------------------------------
+
+CP status: Optimal
+Objective: makespan
+Solve time: 58.01 seconds
+Lower bound: 26.00
+Objective value: 26.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	1	4	3
+1	2	2	119929	4	20	16
+1	3	1	59964	20	23	3
+1	4	3	179894	23	27	4
+2	1	3	179894	4	27	23
+3	1	3	179894	1	4	3
+3	2	1	59964	4	7	3
+3	3	2	119929	7	13	6
+3	4	3	179894	13	27	14
+4	1	3	179894	1	23	22
+4	2	1	59964	23	25	2
+4	3	3	179894	25	27	2
+5	1	3	179894	1	13	12
+5	2	2	119929	13	16	3
+5	3	3	179894	16	25	9
+5	4	1	59964	25	27	2
+6	1	3	179894	1	7	6
+6	2	2	119929	7	20	13
+6	3	3	179894	20	27	7
+7	1	3	179894	1	16	15
+7	2	2	119929	16	27	11
+Block intervals are [Start, End), in charging periods.

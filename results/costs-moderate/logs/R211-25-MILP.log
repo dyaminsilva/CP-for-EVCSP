@@ -1,0 +1,100 @@
+Instance: R211-25
+Instance file: instances/R211-25.txt
+EVs: 4
+Chargers: 2
+Horizon: 76 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	76	3405397	19
+2	1	76	3540313	20
+3	1	76	3294225	19
+4	1	76	3313114	19
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve eliminated 0 rows and 1 columns.
+MIP Presolve modified 4888 coefficients.
+Aggregator did 12 substitutions.
+Reduced MIP has 1229 rows, 4075 columns, and 35858 nonzeros.
+Reduced MIP has 4074 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (65.29 ticks)
+Probing time = 0.01 sec. (5.71 ticks)
+Cover probing fixed 0 vars, tightened 1 bounds.
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1229 rows, 4075 columns, and 35858 nonzeros.
+Reduced MIP has 4074 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (19.42 ticks)
+Probing time = 0.01 sec. (5.70 ticks)
+Clique table members: 2054.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.83 sec. (1908.06 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      171.3481   427                    171.3481    16368         
+      0     0      171.3481   190                     Cuts: 9    16645         
+      0     0      171.3481   165                    Cuts: 54    17199         
+      0     0      171.3481   434                    Cuts: 23    17767         
+Detecting symmetries...
+      0     2      171.3481   245                    171.3481    17767         
+Elapsed time = 3.44 sec. (7626.64 ticks, tree = 0.02 MB, solutions = 0)
+      4     6      171.3481    87                    171.3481    19287         
+     11     6      171.3481    87                    171.3481    20805         
+     22    18      171.3485   298                    171.3481    30353         
+     35    26      171.3481   103                    171.3481    35003         
+     51    42    infeasible                          171.3481    50602         
+     66    52    infeasible                          171.3481    61797         
+     85    51    infeasible                          171.3481    58946         
+     98    63    infeasible                          171.3481    84177         
+    130    72      171.3485   307                    171.3481    92875         
+*   140+   71                          171.3481      171.3481             0.00%
+
+GUB cover cuts applied:  1
+Cover cuts applied:  17
+Implied bound cuts applied:  24
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  4
+
+Root node processing (before b&c):
+  Real time             =    3.39 sec. (7515.84 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    1.31 sec. (3134.10 ticks)
+  Sync time (average)   =    0.20 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    4.69 sec. (10649.95 ticks)
+
+MILP status: Optimal
+Objective: costs
+Solve time: 4.70 seconds
+Lower bound: 171.35
+Objective value: 171.35
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	1	10	9
+1	2	1	59964	10	19	9
+1	3	2	119929	19	34	15
+2	1	1	59964	1	10	9
+2	2	2	119929	10	19	9
+2	3	1	59964	19	36	17
+2	4	2	119929	36	44	8
+3	1	2	119929	44	51	7
+3	2	1	59964	51	62	11
+3	3	2	119929	62	77	15
+4	1	2	119929	34	36	2
+4	2	1	59964	36	51	15
+4	3	2	119929	51	62	11
+4	4	1	59964	62	77	15
+Block intervals are [Start, End), in charging periods.
