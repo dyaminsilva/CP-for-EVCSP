@@ -1,0 +1,109 @@
+Instance: C205-50
+Instance file: instances/C205-50.txt
+EVs: 6
+Chargers: 2
+Horizon: 145 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	145	3337939	19
+2	1	145	4349811	25
+3	1	74	3661738	21
+4	1	87	2678000	15
+5	1	87	2466000	14
+6	1	145	2616000	15
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve eliminated 0 rows and 1 columns.
+MIP Presolve modified 9004 coefficients.
+Aggregator did 18 substitutions.
+Reduced MIP has 2648 rows, 9556 columns, and 84131 nonzeros.
+Reduced MIP has 9555 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.08 sec. (183.41 ticks)
+Probing time = 0.01 sec. (9.44 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 2648 rows, 9556 columns, and 84131 nonzeros.
+Reduced MIP has 9555 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (46.67 ticks)
+Probing time = 0.01 sec. (9.44 ticks)
+Clique table members: 2452.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.61 sec. (915.95 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0      258.2949   557                    258.2949     7442         
+*     0+    0                          272.7273      258.2949             5.29%
+*     0+    0                          270.8900      258.2949             4.65%
+      0     0      258.2949   404      270.8900     Cuts: 165     9282    4.65%
+      0     0      258.2949   214      270.8900      Cuts: 45     9478    4.65%
+      0     0      258.2949   429      270.8900     Cuts: 129    10734    4.65%
+*     0+    0                          267.2921      258.2949             3.37%
+*     0+    0                          266.0928      258.2949             2.93%
+      0     0  -1.00000e+75     0      266.0928      258.2949    10734    2.93%
+      0     0      258.2949   306      266.0928       Cuts: 9    10827    2.93%
+      0     0      258.2949   328      266.0928      Cuts: 68    10997    2.93%
+Detecting symmetries...
+*     0+    0                          258.8961      258.2949             0.23%
+*     0+    0                          258.2969      258.2949             0.00%
+      0     0  -1.00000e+75     0      258.2969      258.2949    10997    0.00%
+
+GUB cover cuts applied:  3
+Clique cuts applied:  3
+Cover cuts applied:  7
+Mixed integer rounding cuts applied:  8
+Zero-half cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    8.36 sec. (15966.57 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    8.36 sec. (15966.57 ticks)
+
+MILP status: Optimal
+Objective: costs
+Solve time: 8.37 seconds
+Lower bound: 258.29
+Objective value: 258.30
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	1	59964	83	134	51
+1	2	2	119929	134	135	1
+1	3	1	59964	135	136	1
+1	4	2	119929	136	137	1
+2	1	2	119929	83	105	22
+2	2	1	59964	105	111	6
+2	3	2	119929	111	122	11
+2	4	1	59964	122	123	1
+3	1	1	59964	22	36	14
+3	2	3	179894	36	47	11
+3	3	1	59964	47	54	7
+3	4	2	119929	54	58	4
+4	1	1	59964	60	61	1
+4	2	2	119929	61	73	12
+4	3	1	59964	73	78	5
+4	4	3	179894	78	83	5
+5	1	2	119929	11	14	3
+5	2	3	179894	14	15	1
+5	3	2	119929	15	30	15
+5	4	1	59964	30	33	3
+6	1	2	119929	123	134	11
+6	2	1	59964	134	137	3
+6	3	3	179894	137	142	5
+6	4	1	59964	142	146	4
+Block intervals are [Start, End), in charging periods.

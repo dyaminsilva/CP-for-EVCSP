@@ -1,0 +1,63 @@
+Instance: C205-25
+Instance file: instances/C205-25.txt
+EVs: 3
+Chargers: 2
+Horizon: 56 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	56	2466000	14
+2	1	56	3823637	22
+3	1	56	3607771	21
+Initial cost LP bound: 125.62 (0.14 seconds of preprocessing)
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 10565 variables, 7620 constraints
+ ! Presolve      : 1056 extractables eliminated
+ ! TimeLimit            = 599.85
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.19s (0.19s extraction + 0.00s propagation)
+ !  . Log search space  : 12793.7 (before), 12793.7 (after)
+ !  . Memory usage      : 16.1 MB (before), 16.1 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0      10565                 -
+ + New bound is 125.6213
+ ! Using temporal relaxation.
+ *      125.9252       32  0.42s        4      (gap is 0.24%)
+ *      125.6365      642  0.70s        2      (gap is 0.01%)
+ *      125.6333     1176  0.73s        3      (gap is 0.01%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 3 solutions found.
+ ! Best objective         : 125.6333 (optimal - effective tol. is 0.01)
+ ! Best bound             : 125.6213
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 7676
+ ! Number of fails        : 2966
+ ! Total memory usage     : 225.2 MB (217.0 MB CP Optimizer + 8.2 MB Concert)
+ ! Time spent in solve    : 0.73s (0.54s engine + 0.19s extraction)
+ ! Search speed (br. / s) : 14214.8
+ ! ----------------------------------------------------------------------------
+
+CP+ status: Optimal
+Objective: costs
+Solve time: 0.87 seconds
+Lower bound: 125.62
+Objective value: 125.63
+Relative gap: 0.01%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	1	2	1
+1	2	1	59964	2	3	1
+1	3	2	119929	3	4	1
+1	4	1	59964	4	41	37
+2	1	1	59964	1	2	1
+2	2	2	119929	2	3	1
+2	3	1	59964	3	4	1
+2	4	2	119929	4	34	30
+3	1	2	119929	34	40	6
+3	2	1	59964	40	41	1
+3	3	3	179894	41	57	16
+Block intervals are [Start, End), in charging periods.

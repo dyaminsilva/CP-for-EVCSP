@@ -1,0 +1,53 @@
+Instance: C108-25
+Instance file: instances/C108-25.txt
+EVs: 3
+Chargers: 2
+Horizon: 33 periods
+Maximum power adjustments: 2
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	33	1798000	10
+2	1	28	3233780	18
+3	1	33	848000	5
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 48 variables, 75 constraints
+ ! Presolve      : 24 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 115.7 (before), 115.7 (after)
+ !  . Memory usage      : 758.9 kB (before), 758.9 kB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0         48                 -
+ + New bound is 34
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ *            34      111  0.03s        1      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 34 (optimal - effective tol. is 0.00)
+ ! Best bound             : 34
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 18220
+ ! Number of fails        : 733
+ ! Total memory usage     : 5.8 MB (5.7 MB CP Optimizer + 0.1 MB Concert)
+ ! Time spent in solve    : 0.04s (0.04s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 607333.3
+ ! ----------------------------------------------------------------------------
+
+CP status: Optimal
+Objective: makespan
+Solve time: 0.04 seconds
+Lower bound: 33.00
+Objective value: 33.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	24	34	10
+2	1	3	179894	6	24	18
+3	1	3	179894	1	6	5
+Block intervals are [Start, End), in charging periods.

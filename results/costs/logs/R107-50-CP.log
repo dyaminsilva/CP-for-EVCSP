@@ -1,0 +1,106 @@
+Instance: R107-50
+Instance file: instances/R107-50.txt
+EVs: 9
+Chargers: 7
+Horizon: 29 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	29	4120453	23
+2	1	29	3052446	17
+3	1	25	3233780	18
+4	1	29	4349811	25
+5	1	27	3090224	18
+6	1	29	2050000	12
+7	1	25	4282353	24
+8	1	29	2256000	13
+9	1	27	2738889	16
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 181 variables, 269 constraints
+ ! Presolve      : 108 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 477.5 (before), 477.5 (after)
+ !  . Memory usage      : 2.1 MB (before), 2.1 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        181                 -
+ + New bound is 363.4410
+ *      372.0853     5922  0.17s        2      (gap is 2.32%)
+ *      371.8102     2555  0.17s        6      (gap is 2.25%)
+ *      371.2053     4660  0.17s        6      (gap is 2.09%)
+ *      369.0821     9281  0.22s        3      (gap is 1.53%)
+ *      368.7999    10991  0.31s        6      (gap is 1.45%)
+ *      368.7858    10993  0.31s        6      (gap is 1.45%)
+ *      368.7824    11322  0.31s        6      (gap is 1.45%)
+ *      368.4826    12060  0.31s        6      (gap is 1.37%)
+ *      368.4825    12092  0.31s        6      (gap is 1.37%)
+ *      368.4825    18876  0.65s        7      (gap is 1.37%)
+ *      368.4825    19219  0.68s        8      (gap is 1.37%)
+ *      367.8828    28461  0.68s        4      (gap is 1.21%)
+ *      367.8828    23538  0.72s        6      (gap is 1.21%)
+ *      367.8828    21197  0.72s        7      (gap is 1.21%)
+ ! Using failure-directed search.
+ *      367.8828    3619k  101.53s      4      (gap is 1.21%)
+ *      367.8828    2968k  101.58s      5      (gap is 1.21%)
+ *      367.8828    3547k  101.58s      6      (gap is 1.21%)
+ *      367.8828    3016k  102.06s      1      (gap is 1.21%)
+ *      367.8828    3498k  102.10s      2      (gap is 1.21%)
+ ! Time = 102.10s, Average fail depth = 14, Memory usage = 29.7 MB
+ ! Current bound is 363.4410 (gap is 1.21%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      367.8828    3645k  102.10s      4      (gap is 1.21%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 20 solutions found.
+ ! Best objective         : 367.8828 (gap is 1.21%)
+ ! Best bound             : 363.4410
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 172338243
+ ! Number of fails        : 82614864
+ ! Total memory usage     : 70.4 MB (70.0 MB CP Optimizer + 0.4 MB Concert)
+ ! Time spent in solve    : 600.09s (600.09s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 287192.1
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: costs
+Solve time: 600.09 seconds
+Lower bound: 363.44
+Objective value: 367.88
+Relative gap: 1.21%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	1	3	2
+1	2	1	59964	3	6	3
+1	3	2	119929	6	18	12
+1	4	3	179894	18	30	12
+2	1	3	179894	1	18	17
+3	1	3	179894	1	2	1
+3	2	2	119929	2	3	1
+3	3	3	179894	3	6	3
+3	4	2	119929	6	26	20
+4	1	2	119929	1	2	1
+4	2	3	179894	2	19	17
+4	3	1	59964	19	21	2
+4	4	2	119929	21	30	9
+5	1	3	179894	1	2	1
+5	2	2	119929	2	19	17
+5	3	3	179894	19	22	3
+5	4	1	59964	22	28	6
+6	1	3	179894	18	21	3
+6	2	2	119929	21	22	1
+6	3	3	179894	22	30	8
+7	1	3	179894	1	2	1
+7	2	2	119929	2	3	1
+7	3	3	179894	3	24	21
+7	4	2	119929	24	26	2
+8	1	3	179894	17	18	1
+8	2	2	119929	18	19	1
+8	3	3	179894	19	30	11
+9	1	1	59964	1	2	1
+9	2	3	179894	2	17	15
+Block intervals are [Start, End), in charging periods.

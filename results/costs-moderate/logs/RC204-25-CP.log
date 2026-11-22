@@ -1,0 +1,70 @@
+Instance: RC204-25
+Instance file: instances/RC204-25.txt
+EVs: 3
+Chargers: 2
+Horizon: 55 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	55	2694000	15
+2	1	55	3553805	20
+3	1	55	3580788	20
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 61 variables, 95 constraints
+ ! Presolve      : 36 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 174.7 (before), 174.7 (after)
+ !  . Memory usage      : 1.0 MB (before), 1.0 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0         61                 -
+ + New bound is 124.1108
+ *      124.1266     1408  0.12s        3      (gap is 0.01%)
+ *      124.1266     1443  0.12s        5      (gap is 0.01%)
+ *      124.1264     1892  0.15s        2      (gap is 0.01%)
+ *      124.1264    18182  0.36s        6      (gap is 0.01%)
+        124.1263    17000         61    3            -
+ *      124.1263    17000  0.39s        3      (gap is 0.01%)
+ *      124.1261    18544  0.43s        5      (gap is 0.01%)
+ *      124.1261    20034  0.43s        6      (gap is 0.01%)
+ *      124.1261    19290  0.46s        3      (gap is 0.01%)
+ *      124.1261    21392  0.62s        8      (gap is 0.01%)
+ *      124.1261    25479  0.69s        7      (gap is 0.01%)
+ *      124.1261    40736  0.96s        4      (gap is 0.01%)
+ ! Using failure-directed search.
+ *      124.1261    66144  1.83s        1      (gap is 0.01%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 12 solutions found.
+ ! Best objective         : 124.1261 (gap is 0.01%)
+ ! Best bound             : 124.1108
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 116653874
+ ! Number of fails        : 56615623
+ ! Total memory usage     : 71.9 MB (71.8 MB CP Optimizer + 0.2 MB Concert)
+ ! Time spent in solve    : 600.02s (600.02s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 194419.9
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: costs
+Solve time: 600.02 seconds
+Lower bound: 124.11
+Objective value: 124.13
+Relative gap: 0.01%
+EV	Block	Level	Power	Start	End	Duration
+1	1	1	59964	1	2	1
+1	2	2	119929	2	3	1
+1	3	1	59964	3	7	4
+1	4	2	119929	7	26	19
+2	1	2	119929	26	56	30
+3	1	2	119929	1	2	1
+3	2	1	59964	2	3	1
+3	3	2	119929	3	7	4
+3	4	1	59964	7	56	49
+Block intervals are [Start, End), in charging periods.

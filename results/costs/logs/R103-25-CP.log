@@ -1,0 +1,93 @@
+Instance: R103-25
+Instance file: instances/R103-25.txt
+EVs: 6
+Chargers: 4
+Horizon: 32 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	26	3378414	19
+2	1	30	3432380	20
+3	1	32	2961779	17
+4	1	31	3313114	19
+5	1	32	1020000	6
+6	1	27	2650000	15
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 121 variables, 182 constraints
+ ! Presolve      : 72 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 277.1 (before), 277.1 (after)
+ !  . Memory usage      : 1.6 MB (before), 1.6 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        121                 -
+ + New bound is 214.9207
+ *      214.9915     6901  0.20s        3      (gap is 0.03%)
+ *      214.9800     9035  0.21s        4      (gap is 0.03%)
+ *      214.9799    15197  0.38s        6      (gap is 0.03%)
+ *      214.9730    15545  0.38s        6      (gap is 0.02%)
+ *      214.9730    13181  0.38s        7      (gap is 0.02%)
+ *      214.9730    16257  0.38s        1      (gap is 0.02%)
+ ! Using failure-directed search.
+ *      214.9730    19292  0.45s        4      (gap is 0.02%)
+ *      214.9730    21147  0.49s        2      (gap is 0.02%)
+ *      214.9730    20053  0.63s        8      (gap is 0.02%)
+ *      214.9730    60408  1.30s        5      (gap is 0.02%)
+ *      214.9730    66109  1.48s        3      (gap is 0.02%)
+ *      214.9730    75024  1.76s        3      (gap is 0.02%)
+ *      214.9730    68660  1.80s        4      (gap is 0.02%)
+ *      214.9730    70417  1.83s        2      (gap is 0.02%)
+ *      214.9730    67099  1.83s        6      (gap is 0.02%)
+ *      214.9729    80931  1.94s        3      (gap is 0.02%)
+ *      214.9729    68809  1.97s        7      (gap is 0.02%)
+ *      214.9729    66458  1.97s        8      (gap is 0.02%)
+ *      214.9729    73953  2.01s        6      (gap is 0.02%)
+ ! Time = 2.01s, Average fail depth = 14, Memory usage = 15.5 MB
+ ! Current bound is 214.9207 (gap is 0.02%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      214.9729    80552  2.11s        2      (gap is 0.02%)
+ *      214.9729    81637  2.15s        4      (gap is 0.02%)
+ *      214.9729    94183  2.29s        5      (gap is 0.02%)
+ *      214.9729     287k  23.79s       1      (gap is 0.02%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 23 solutions found.
+ ! Best objective         : 214.9729 (gap is 0.02%)
+ ! Best bound             : 214.9207
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 92285775
+ ! Number of fails        : 44713589
+ ! Total memory usage     : 44.0 MB (43.8 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.02s (600.02s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 153807.1
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: costs
+Solve time: 600.02 seconds
+Lower bound: 214.92
+Objective value: 214.97
+Relative gap: 0.02%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	1	2	1
+1	2	3	179894	2	3	1
+1	3	2	119929	3	23	20
+1	4	3	179894	23	27	4
+2	1	2	119929	1	3	2
+2	2	3	179894	3	16	13
+2	3	1	59964	16	31	15
+3	1	3	179894	16	23	7
+3	2	2	119929	23	24	1
+3	3	3	179894	24	33	9
+4	1	2	119929	1	2	1
+4	2	1	59964	2	16	14
+4	3	3	179894	16	24	8
+4	4	2	119929	24	32	8
+5	1	3	179894	27	33	6
+6	1	3	179894	1	16	15
+Block intervals are [Start, End), in charging periods.

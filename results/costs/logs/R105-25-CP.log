@@ -1,0 +1,104 @@
+Instance: R105-25
+Instance file: instances/R105-25.txt
+EVs: 7
+Chargers: 4
+Horizon: 34 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	34	2540000	15
+2	1	31	2502000	14
+3	1	34	2716000	16
+4	1	32	3275336	19
+5	1	34	2871112	16
+6	1	31	1792000	10
+7	1	25	2516000	14
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 141 variables, 211 constraints
+ ! Presolve      : 84 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.02s (0.02s extraction + 0.00s propagation)
+ !  . Log search space  : 433.3 (before), 433.3 (after)
+ !  . Memory usage      : 1.7 MB (before), 1.7 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        141                 -
+ + New bound is 232.0072
+ ! Using failure-directed search.
+ *      232.0695     153k  3.73s        4      (gap is 0.03%)
+ *      232.0631     146k  3.97s        8      (gap is 0.02%)
+ *      232.0631     179k  4.42s        3      (gap is 0.02%)
+ *      232.0631     182k  4.78s        5      (gap is 0.02%)
+ *      232.0631     225k  5.02s        6      (gap is 0.02%)
+ *      232.0630     202k  5.12s        4      (gap is 0.02%)
+ *      232.0630     192k  5.15s        5      (gap is 0.02%)
+ *      232.0630     233k  6.24s        3      (gap is 0.02%)
+ *      232.0630     228k  6.28s        4      (gap is 0.02%)
+ *      232.0630     222k  6.28s        5      (gap is 0.02%)
+ *      232.0630     216k  6.28s        8      (gap is 0.02%)
+ *      232.0630     322k  7.33s        2      (gap is 0.02%)
+ *      232.0630     303k  8.16s        7      (gap is 0.02%)
+ *      232.0629     342k  10.70s       7      (gap is 0.02%)
+ *      232.0629     390k  10.81s       2      (gap is 0.02%)
+ *      232.0629     369k  10.91s       6      (gap is 0.02%)
+ *      232.0629     337k  10.91s       3      (gap is 0.02%)
+ *      232.0629     333k  10.98s       4      (gap is 0.02%)
+ *      232.0629     675k  36.28s       6      (gap is 0.02%)
+ ! Time = 36.28s, Average fail depth = 24, Memory usage = 20.7 MB
+ ! Current bound is 232.0072 (gap is 0.02%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      232.0629     634k  36.32s       8      (gap is 0.02%)
+ *      232.0629     698k  36.32s       2      (gap is 0.02%)
+ *      232.0629     653k  36.36s       3      (gap is 0.02%)
+ *      232.0629     638k  36.44s       4      (gap is 0.02%)
+ *      232.0629     981k  406.07s      1      (gap is 0.02%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 24 solutions found.
+ ! Best objective         : 232.0629 (gap is 0.02%)
+ ! Best bound             : 232.0072
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 43351052
+ ! Number of fails        : 21138329
+ ! Total memory usage     : 29.1 MB (28.8 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.07s (600.06s engine + 0.02s extraction)
+ ! Search speed (br. / s) : 72245.7
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: costs
+Solve time: 600.06 seconds
+Lower bound: 232.01
+Objective value: 232.06
+Relative gap: 0.02%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	179894	14	23	9
+1	2	1	59964	23	33	10
+1	3	3	179894	33	35	2
+2	1	1	59964	1	2	1
+2	2	2	119929	2	4	2
+2	3	3	179894	4	11	7
+2	4	2	119929	11	19	8
+3	1	1	59964	19	20	1
+3	2	3	179894	20	35	15
+4	1	3	179894	1	2	1
+4	2	2	119929	2	4	2
+4	3	1	59964	4	14	10
+4	4	2	119929	14	33	19
+5	1	2	119929	16	19	3
+5	2	3	179894	19	20	1
+5	3	1	59964	20	23	3
+5	4	3	179894	23	35	12
+6	1	2	119929	1	2	1
+6	2	3	179894	2	3	1
+6	3	2	119929	3	11	8
+6	4	3	179894	11	14	3
+7	1	3	179894	1	2	1
+7	2	2	119929	2	3	1
+7	3	3	179894	3	14	11
+7	4	2	119929	14	16	2
+Block intervals are [Start, End), in charging periods.

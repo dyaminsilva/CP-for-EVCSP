@@ -1,0 +1,172 @@
+Instance: R208-50
+Instance file: instances/R208-50.txt
+EVs: 7
+Chargers: 3
+Horizon: 84 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	84	4255370	24
+2	1	84	4255370	24
+3	1	84	4376795	25
+4	1	84	3432380	20
+5	1	84	3275336	19
+6	1	83	4133945	23
+7	1	84	3324447	19
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 141 variables, 211 constraints
+ ! Presolve      : 84 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.02s (0.02s extraction + 0.00s propagation)
+ !  . Log search space  : 466.6 (before), 466.6 (after)
+ !  . Memory usage      : 1.7 MB (before), 1.7 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        141                 -
+ + New bound is 331.8100
+ *      344.7961       58  0.14s        1      (gap is 3.77%)
+ *      339.7164      335  0.14s        1      (gap is 2.33%)
+ *      338.2171      572  0.14s        1      (gap is 1.89%)
+ *      337.9034     1138  0.14s        1      (gap is 1.80%)
+ *      337.0308     2879  0.17s        1      (gap is 1.55%)
+ *      335.5013     3334  0.17s        1      (gap is 1.10%)
+ *      335.2229     4472  0.29s        8      (gap is 1.02%)
+ *      335.2052    12447  0.34s        1      (gap is 1.01%)
+ *      335.2042    13009  0.34s        1      (gap is 1.01%)
+ *      335.2033    13255  0.34s        1      (gap is 1.01%)
+ *      335.2017    12529  0.34s        6      (gap is 1.01%)
+ *      334.3325    13906  0.36s        1      (gap is 0.75%)
+ *      334.3291    14066  0.36s        1      (gap is 0.75%)
+ *      334.3157    14110  0.36s        1      (gap is 0.75%)
+ *      334.3117    14989  0.36s        1      (gap is 0.75%)
+ *      334.3077    16048  0.41s        1      (gap is 0.75%)
+ *      334.3060    16104  0.41s        1      (gap is 0.75%)
+ *      334.3054    16774  0.41s        1      (gap is 0.75%)
+ *      334.3035    17944  0.43s        1      (gap is 0.75%)
+ ! Time = 0.43s, Average fail depth = 41, Memory usage = 19.7 MB
+ ! Current bound is 331.8100 (gap is 0.75%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      334.3029    18242  0.43s        1      (gap is 0.75%)
+ *      334.3029    18517  0.49s        1      (gap is 0.75%)
+ *      334.3024    18601  0.49s        1      (gap is 0.75%)
+ *      333.7026    18974  0.49s        1      (gap is 0.57%)
+ ! Using failure-directed search.
+ *      333.4080    14790  0.64s        8      (gap is 0.48%)
+ *      333.4048    18232  0.73s        8      (gap is 0.48%)
+ *      333.4029    18607  0.73s        8      (gap is 0.48%)
+ *      333.4029    26681  0.73s        4      (gap is 0.48%)
+ *      333.4029    28850  0.77s        5      (gap is 0.48%)
+ *      333.4029    49148  1.45s        7      (gap is 0.48%)
+ *      333.4029    48045  1.61s        1      (gap is 0.48%)
+ *      333.1310     156k  3.89s        3      (gap is 0.40%)
+ *      333.1032     131k  3.93s        4      (gap is 0.39%)
+ *      333.1032     145k  3.93s        5      (gap is 0.39%)
+ *      333.1032     136k  4.02s        4      (gap is 0.39%)
+ *      333.1032     153k  4.06s        5      (gap is 0.39%)
+ *      333.1032     140k  4.06s        7      (gap is 0.39%)
+ *      333.1031     139k  4.09s        4      (gap is 0.39%)
+ *      333.1031     140k  4.09s        4      (gap is 0.39%)
+ *      333.1031     143k  4.13s        8      (gap is 0.39%)
+ ! Time = 4.13s, Average fail depth = 25, Memory usage = 20.7 MB
+ ! Current bound is 331.8100 (gap is 0.39%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      333.1031     160k  4.17s        2      (gap is 0.39%)
+ *      333.1031     169k  4.17s        3      (gap is 0.39%)
+ *      333.1031     142k  4.17s        4      (gap is 0.39%)
+ *      333.1029     146k  4.20s        6      (gap is 0.39%)
+ *      333.1029     147k  4.20s        6      (gap is 0.39%)
+ *      333.1029     148k  4.24s        7      (gap is 0.39%)
+ *      333.1028     153k  4.43s        4      (gap is 0.39%)
+ *      333.1028     171k  4.48s        5      (gap is 0.39%)
+ *      333.1028     172k  4.48s        5      (gap is 0.39%)
+ *      333.1028     158k  4.50s        7      (gap is 0.39%)
+ *      333.1028     152k  4.50s        8      (gap is 0.39%)
+ *      332.5214     188k  4.61s        3      (gap is 0.21%)
+ *      332.2033     160k  4.66s        4      (gap is 0.12%)
+ *      332.2033     158k  4.70s        8      (gap is 0.12%)
+ *      331.9035     162k  4.74s        6      (gap is 0.03%)
+ *      331.9035     185k  5.48s        8      (gap is 0.03%)
+ *      331.9035     218k  5.52s        2      (gap is 0.03%)
+ *      331.9035     219k  5.54s        5      (gap is 0.03%)
+ *      331.9035     301k  7.59s        7      (gap is 0.03%)
+ *      331.9035     273k  7.64s        8      (gap is 0.03%)
+ ! Time = 7.64s, Average fail depth = 24, Memory usage = 23.6 MB
+ ! Current bound is 331.8100 (gap is 0.03%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      331.9035     314k  7.64s        2      (gap is 0.03%)
+ *      331.9034    1051k  25.34s       3      (gap is 0.03%)
+ *      331.9034     989k  25.38s       4      (gap is 0.03%)
+ *      331.9034     999k  25.42s       6      (gap is 0.03%)
+ *      331.9034     959k  25.49s       8      (gap is 0.03%)
+ *      331.9034    1018k  25.97s       2      (gap is 0.03%)
+ *      331.9034    1078k  26.00s       3      (gap is 0.03%)
+ *      331.9034    1020k  26.04s       2      (gap is 0.03%)
+ *      331.9034    1009k  26.08s       4      (gap is 0.03%)
+ *      331.9034    1023k  26.08s       6      (gap is 0.03%)
+ *      331.9034    1024k  26.72s       4      (gap is 0.03%)
+ *      331.9034    1035k  26.77s       5      (gap is 0.03%)
+ *      331.9034    1053k  26.77s       6      (gap is 0.03%)
+ *      331.9034    1133k  27.79s       3      (gap is 0.03%)
+ *      331.9034    1062k  27.86s       4      (gap is 0.03%)
+ *      331.9034    1071k  27.86s       5      (gap is 0.03%)
+ *      331.9034    1062k  27.86s       2      (gap is 0.03%)
+ *      331.9034    1053k  28.14s       8      (gap is 0.03%)
+ *      331.9033    1168k  32.04s       8      (gap is 0.03%)
+ *      331.9031     470k  32.09s       1      (gap is 0.03%)
+ ! Time = 32.09s, Average fail depth = 22, Memory usage = 22.1 MB
+ ! Current bound is 331.8100 (gap is 0.03%)
+ !          Best Branches  Non-fixed    W       Branch decision
+ *      331.9031    1195k  32.09s       5      (gap is 0.03%)
+ *      331.9031    1214k  33.06s       8      (gap is 0.03%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 81 solutions found.
+ ! Best objective         : 331.9031 (gap is 0.03%)
+ ! Best bound             : 331.8100
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 96130734
+ ! Number of fails        : 43939501
+ ! Total memory usage     : 40.2 MB (39.9 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.04s (600.03s engine + 0.02s extraction)
+ ! Search speed (br. / s) : 160209.9
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: costs
+Solve time: 600.04 seconds
+Lower bound: 331.81
+Objective value: 331.90
+Relative gap: 0.03%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	119929	29	30	1
+1	2	1	59964	30	31	1
+1	3	2	119929	31	32	1
+1	4	3	179894	32	54	22
+2	1	2	119929	54	55	1
+2	2	3	179894	55	64	9
+2	3	2	119929	64	85	21
+3	1	2	119929	35	54	19
+3	2	3	179894	54	55	1
+3	3	2	119929	55	57	2
+3	4	1	59964	57	85	28
+4	1	2	119929	29	30	1
+4	2	3	179894	30	31	1
+4	3	2	119929	31	32	1
+4	4	1	59964	32	83	51
+5	1	2	119929	1	2	1
+5	2	3	179894	2	3	1
+5	3	1	59964	3	5	2
+5	4	2	119929	5	29	24
+6	1	3	179894	1	2	1
+6	2	1	59964	2	3	1
+6	3	3	179894	3	4	1
+6	4	2	119929	4	35	31
+7	1	1	59964	1	2	1
+7	2	2	119929	2	4	2
+7	3	3	179894	4	5	1
+7	4	2	119929	5	29	24
+Block intervals are [Start, End), in charging periods.

@@ -1,0 +1,83 @@
+Instance: RC102-50
+Instance file: instances/RC102-50.txt
+EVs: 8
+Chargers: 5
+Horizon: 33 periods
+Maximum power adjustments: 4
+Positive power levels: 3
+Power levels: 74955 149911 224867
+
+EV	First	Last	Power sum	Min periods
+1	1	33	2836000	13
+2	1	25	3140000	14
+3	1	33	2200000	10
+4	1	27	3520890	16
+5	1	26	4196033	19
+6	1	24	4250000	19
+7	1	27	4870615	22
+8	1	33	3154000	15
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 192 variables, 286 constraints
+ ! Presolve      : 128 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 524.1 (before), 524.1 (after)
+ !  . Memory usage      : 1.6 MB (before), 1.6 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        192                 -
+ + New bound is 33
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ ! Using failure-directed search.
+ *            34    1680k  49.94s       1      (gap is 2.94%)
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, 1 solution found.
+ ! Best objective         : 34 (gap is 2.94%)
+ ! Best bound             : 33
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 473804965
+ ! Number of fails        : 66391329
+ ! Total memory usage     : 46.1 MB (45.8 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.01s (600.00s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 789674.9
+ ! ----------------------------------------------------------------------------
+
+CP status: Feasible
+Objective: makespan
+Solve time: 600.01 seconds
+Lower bound: 32.00
+Objective value: 33.00
+Relative gap: 3.03%
+EV	Block	Level	Power	Start	End	Duration
+1	1	2	149911	20	21	1
+1	2	3	224867	21	24	3
+1	3	2	149911	24	27	3
+1	4	3	224867	27	34	7
+2	1	1	74955	1	7	6
+2	2	3	224867	7	19	12
+3	1	2	149911	22	24	2
+3	2	3	224867	24	25	1
+3	3	1	74955	25	27	2
+3	4	3	224867	27	34	7
+4	1	3	224867	1	13	12
+4	2	2	149911	13	15	2
+4	3	1	74955	15	19	4
+4	4	3	224867	19	20	1
+5	1	2	149911	1	13	12
+5	2	3	224867	13	20	7
+5	3	1	74955	20	25	5
+5	4	3	224867	25	27	2
+6	1	3	224867	1	15	14
+6	2	2	149911	15	20	5
+6	3	3	224867	20	21	1
+6	4	2	149911	21	22	1
+7	1	3	224867	1	7	6
+7	2	1	74955	7	15	8
+7	3	3	224867	15	28	13
+8	1	1	74955	19	20	1
+8	2	3	224867	20	34	14
+Block intervals are [Start, End), in charging periods.

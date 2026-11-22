@@ -1,0 +1,62 @@
+Instance: RC203-50
+Instance file: instances/RC203-50.txt
+EVs: 7
+Chargers: 3
+Horizon: 56 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 74955 149911 224867
+
+EV	First	Last	Power sum	Min periods
+1	1	56	3358000	15
+2	1	56	3596446	16
+3	1	53	3770224	17
+4	1	47	2906000	13
+5	1	56	4911090	22
+6	1	40	3344000	15
+7	1	45	3100000	14
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 141 variables, 211 constraints
+ ! Presolve      : 84 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.01s (0.01s extraction + 0.00s propagation)
+ !  . Log search space  : 451.3 (before), 451.3 (after)
+ !  . Memory usage      : 1.4 MB (before), 1.4 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        141                 -
+ + New bound is 314.8109
+ ! Using failure-directed search.
+ *      314.8183   16316k  546.80s      2      (gap is 0.00%)
+ ! ----------------------------------------------------------------------------
+ ! Search completed, 1 solution found.
+ ! Best objective         : 314.8183 (optimal - effective tol. is 0.03)
+ ! Best bound             : 314.8109
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 115603053
+ ! Number of fails        : 58241674
+ ! Total memory usage     : 24.0 MB (23.8 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 546.84s (546.84s engine + 0.01s extraction)
+ ! Search speed (br. / s) : 211405.8
+ ! ----------------------------------------------------------------------------
+
+CP status: Optimal
+Objective: costs
+Solve time: 546.84 seconds
+Lower bound: 314.81
+Objective value: 314.82
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	224867	42	57	15
+2	1	3	224867	41	57	16
+3	1	3	224867	1	14	13
+3	2	2	149911	14	20	6
+4	1	3	224867	28	41	13
+5	1	3	224867	20	42	22
+6	1	3	224867	1	14	13
+6	2	1	74955	14	20	6
+7	1	3	224867	14	28	14
+Block intervals are [Start, End), in charging periods.

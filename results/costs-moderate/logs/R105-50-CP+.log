@@ -1,0 +1,53 @@
+Instance: R105-50
+Instance file: instances/R105-50.txt
+EVs: 12
+Chargers: 7
+Horizon: 33 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	29	3999029	23
+2	1	33	3150669	18
+3	1	27	2280000	13
+4	1	28	3048668	17
+5	1	33	776000	5
+6	1	27	4039504	23
+7	1	27	2572000	15
+8	1	32	4012520	23
+9	1	30	2848445	16
+10	1	32	2863557	16
+11	1	33	2961779	17
+12	1	32	2266000	13
+Initial cost LP bound: 438.49 (0.09 seconds of preprocessing)
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 20789 variables, 15216 constraints
+ ! Presolve      : 2370 extractables eliminated
+ ! TimeLimit            = 599.90
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.40s (0.40s extraction + 0.00s propagation)
+ !  . Log search space  : 52975.5 (before), 52975.5 (after)
+ !  . Memory usage      : 35.1 MB (before), 35.1 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0      20789                 -
+ + New bound is 438.4869
+ ! Using temporal relaxation.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 438.4869
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 13505337
+ ! Number of fails        : 6658880
+ ! Total memory usage     : 503.4 MB (486.4 MB CP Optimizer + 17.0 MB Concert)
+ ! Time spent in solve    : 599.90s (599.50s engine + 0.40s extraction)
+ ! Search speed (br. / s) : 22527.7
+ ! ----------------------------------------------------------------------------
+
+CP+ status: Unknown
+Objective: costs
+Solve time: 600.00 seconds
+Lower bound: 438.49

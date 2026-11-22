@@ -1,0 +1,58 @@
+Instance: R101-50
+Instance file: instances/R101-50.txt
+EVs: 16
+Chargers: 7
+Horizon: 38 periods
+Maximum power adjustments: 4
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	27	2456000	14
+2	1	38	1328000	8
+3	1	25	2776667	16
+4	1	24	3756179	21
+5	1	35	2886223	17
+6	1	32	2746445	16
+7	1	38	1342000	8
+8	1	30	1446000	9
+9	1	28	2332000	13
+10	1	29	3648246	21
+11	1	38	3237558	18
+12	1	37	1484000	9
+13	1	26	2434000	14
+14	1	25	3688721	21
+15	1	32	440000	3
+16	1	27	2799334	16
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 384 variables, 566 constraints
+ ! Presolve      : 256 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 1085.4 (before), 1085.4 (after)
+ !  . Memory usage      : 2.7 MB (before), 2.7 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        384                 -
+ + New bound is 38
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ ! Using failure-directed search.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 38
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 560593041
+ ! Number of fails        : 109200341
+ ! Total memory usage     : 33.1 MB (32.4 MB CP Optimizer + 0.7 MB Concert)
+ ! Time spent in solve    : 600.00s (600.00s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 934321.7
+ ! ----------------------------------------------------------------------------
+
+CP status: Unknown
+Objective: makespan
+Solve time: 600.00 seconds
+Lower bound: 37.00

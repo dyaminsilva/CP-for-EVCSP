@@ -1,0 +1,50 @@
+Instance: R210-50
+Instance file: instances/R210-50.txt
+EVs: 8
+Chargers: 3
+Horizon: 85 periods
+Maximum power adjustments: 3
+Positive power levels: 3
+Power levels: 59964 119929 179894
+
+EV	First	Last	Power sum	Min periods
+1	1	73	3702213	21
+2	1	74	3621263	21
+3	1	78	3196002	18
+4	1	83	4160928	24
+5	1	79	4282353	24
+6	1	71	4363303	25
+7	1	85	4187912	24
+8	1	85	2772890	16
+ ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
+ ! Minimization problem - 160 variables, 238 constraints
+ ! Presolve      : 96 extractables eliminated
+ ! TimeLimit            = 600
+ ! Workers              = 8
+ ! LogVerbosity         = Terse
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 522.2 (before), 522.2 (after)
+ !  . Memory usage      : 1.4 MB (before), 1.4 MB (after)
+ ! Using parallel search with 8 workers.
+ ! ----------------------------------------------------------------------------
+ !          Best Branches  Non-fixed    W       Branch decision
+                        0        160                 -
+ + New bound is 86
+ ! Using iterative diving.
+ ! Using temporal relaxation.
+ ! Using failure-directed search.
+ ! ----------------------------------------------------------------------------
+ ! Search terminated by limit, no solution found.
+ ! Best bound             : 86
+ ! ----------------------------------------------------------------------------
+ ! Number of branches     : 546752301
+ ! Number of fails        : 109032005
+ ! Total memory usage     : 23.2 MB (22.9 MB CP Optimizer + 0.3 MB Concert)
+ ! Time spent in solve    : 600.02s (600.02s engine + 0.00s extraction)
+ ! Search speed (br. / s) : 911238.6
+ ! ----------------------------------------------------------------------------
+
+CP status: Unknown
+Objective: makespan
+Solve time: 600.01 seconds
+Lower bound: 85.00

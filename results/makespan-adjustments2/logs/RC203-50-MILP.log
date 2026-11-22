@@ -1,0 +1,131 @@
+Instance: RC203-50
+Instance file: instances/RC203-50.txt
+EVs: 7
+Chargers: 3
+Horizon: 56 periods
+Maximum power adjustments: 2
+Positive power levels: 3
+Power levels: 74955 149911 224867
+
+EV	First	Last	Power sum	Min periods
+1	1	56	3358000	15
+2	1	56	3596446	16
+3	1	53	3770224	17
+4	1	47	2906000	13
+5	1	56	4911090	22
+6	1	40	3344000	15
+7	1	45	3100000	14
+Version identifier: 22.1.0.0 | 2022-03-09 | 1a383f8ce
+CPXPARAM_LPMethod                                2
+CPXPARAM_QPMethod                                2
+CPXPARAM_Threads                                 8
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Strategy_StartAlgorithm             2
+CPXPARAM_TimeLimit                               600
+Tried aggregator 2 times.
+MIP Presolve eliminated 0 rows and 1 columns.
+MIP Presolve modified 2427 coefficients.
+Aggregator did 21 substitutions.
+Reduced MIP has 1248 rows, 4581 columns, and 33126 nonzeros.
+Reduced MIP has 4581 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (36.67 ticks)
+Probing time = 0.01 sec. (4.95 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1248 rows, 4581 columns, and 33126 nonzeros.
+Reduced MIP has 4581 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (16.65 ticks)
+Probing time = 0.01 sec. (4.75 ticks)
+Clique table members: 14585.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.08 sec. (189.05 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       56.0000   356                     56.0000     2013         
+      0     0       56.0000   376                    Cuts: 27     2404         
+      0     0       56.0000   394                    Cuts: 26     3138         
+Detecting symmetries...
+      0     2       56.0000   279                     56.0000     3138         
+Elapsed time = 2.61 sec. (4948.30 ticks, tree = 0.02 MB, solutions = 0)
+      2     4       56.0000   292                     56.0000     5336         
+      4     3       56.0000   329                     56.0000     4686         
+     11    10       56.0000   375                     56.0000    11554         
+     26    19       56.0000   328                     56.0000    18685         
+     38    28       56.0000   276                     56.0000    26291         
+     52    35       56.0000   214                     56.0000    32518         
+     63    40       56.0000   300                     56.0000    37990         
+     72    59       56.0000   204                     56.0000    55128         
+     97    68    infeasible                           56.0000    71436         
+    222   122       56.0000   164                     56.0000   134417         
+Elapsed time = 4.11 sec. (8393.49 ticks, tree = 0.30 MB, solutions = 0)
+    332   182    infeasible                           56.0000   244054         
+    425   182       56.0000   127                     56.0000   365241         
+    561   194       56.0000   115                     56.0000   397109         
+    676   282       56.0000    87                     56.0000   458944         
+    783   310       56.0000    95                     56.0000   492954         
+    881   314       56.0000   164                     56.0000   531102         
+    995   337    infeasible                           56.0000   574917         
+   1085   367       56.0000    97                     56.0000   613506         
+   1185   394       56.0000    97                     56.0000   652485         
+   1250   417    infeasible                           56.0000   702151         
+Elapsed time = 8.72 sec. (18061.21 ticks, tree = 2.54 MB, solutions = 0)
+   1352   414    infeasible                           56.0000   732090         
+   1458   450       56.0000    69                     56.0000   795981         
+   1605   458       56.0000   118                     56.0000   849636         
+   1769   485    infeasible                           56.0000   896448         
+   1911   491    infeasible                           56.0000   921191         
+   2003   543    infeasible                           56.0000   977011         
+   2090   501    infeasible                           56.0000  1032406         
+   2170   482    infeasible                           56.0000  1060123         
+   2261   459    infeasible                           56.0000  1105673         
+   2408   476       56.0000   173                     56.0000  1162298         
+Elapsed time = 12.95 sec. (27673.43 ticks, tree = 3.10 MB, solutions = 0)
+   2542   516       56.0000   142                     56.0000  1205971         
+*  2581   497      integral     0       56.0000       56.0000  1208408    0.00%
+   2622   543    infeasible             56.0000       56.0000  1241338    0.00%
+
+GUB cover cuts applied:  1
+Cover cuts applied:  509
+Flow cuts applied:  2
+Mixed integer rounding cuts applied:  8
+
+Root node processing (before b&c):
+  Real time             =    2.52 sec. (4927.64 ticks)
+Parallel b&c, 8 threads:
+  Real time             =   11.48 sec. (25206.95 ticks)
+  Sync time (average)   =    1.21 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   14.00 sec. (30134.59 ticks)
+
+MILP status: Optimal
+Objective: makespan
+Solve time: 14.00 seconds
+Lower bound: 56.00
+Objective value: 56.00
+Relative gap: 0.00%
+EV	Block	Level	Power	Start	End	Duration
+1	1	3	224867	41	44	3
+1	2	2	149911	44	47	3
+1	3	3	224867	47	57	10
+2	1	3	224867	1	8	7
+2	2	2	149911	8	14	6
+2	3	1	74955	14	29	15
+3	1	3	224867	29	41	12
+3	2	2	149911	41	44	3
+3	3	3	224867	44	47	3
+4	1	3	224867	18	31	13
+5	1	3	224867	31	41	10
+5	2	1	74955	41	47	6
+5	3	3	224867	47	57	10
+6	1	2	149911	8	14	6
+6	2	3	224867	14	17	3
+6	3	2	149911	17	29	12
+7	1	3	224867	1	8	7
+7	2	2	149911	8	17	9
+7	3	3	224867	17	18	1
+Block intervals are [Start, End), in charging periods.
