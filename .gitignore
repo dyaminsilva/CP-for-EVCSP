@@ -14,7 +14,6 @@
 !/instances/
 !/results/
 /results/*
-!/results/README.md
 !/results/costs/
 !/results/costs-flat/
 !/results/costs-moderate/
