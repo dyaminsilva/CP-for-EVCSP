@@ -10,7 +10,7 @@ The [112 baseline instances](instances/README.txt) build on the multigraph routi
 - **CP:** interval-based constraint programming.
 - **CP+:** the same CP model with additional LP-based cost propagation.
 
-CP and CP+ both retain the first two strengthenings; the third, excluding avoidable overcharging, is not included. CP+ adds propagation only for the cost objective, so it is identical to CP for makespan. Additional valid inequalities and bounds are enabled by default.
+Additional valid inequalities and bounds are enabled by default.
 
 ## Build and run
 
