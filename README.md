@@ -26,12 +26,6 @@ bash build_linux.sh
 ./CP-for-EVCSP C101-25 CP makespan
 ```
 
-**Windows:** Open `CP-for-EVCSP.sln` in Visual Studio and build Release/x64. The project uses toolset v145 and defaults to Studio 22.1.1; override `CplexStudioRoot` and `CplexLibraryName` if needed. Run, for example:
-
-```powershell
-.\x64\Release\CP-for-EVCSP.exe C101-25 CP+ costs
-```
-
 The command syntax is `CP-for-EVCSP <instance> [MILP|CP|CP+] [makespan|costs]`. Defaults are `MILP` and `makespan`. The instance name resolves to `instances/<instance>.txt`. Each run prints a schedule if one is found and appends a row to `results-MILP.txt`, `results-CP.txt`, or `results-CP-propagation.txt` in the working directory.
 
 ## Experiment settings and results

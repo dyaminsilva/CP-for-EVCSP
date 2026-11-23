@@ -6,9 +6,6 @@
 !/LICENSE
 !/build_linux.sh
 !/build_macos.sh
-!/CP-for-EVCSP.sln
-!/CP-for-EVCSP.vcxproj
-!/CP-for-EVCSP.vcxproj.filters
 
 !/cpp/
 !/instances/
@@ -30,6 +27,11 @@
 /results/*/logs-propagation/*
 !/results/*/logs/*.log
 !/results/*/logs-propagation/*.log
+
+# Visual Studio project files stay local.
+*.sln
+*.vcxproj
+*.vcxproj.filters
 
 # Workbooks and editor lock files stay local, including inside allowed folders.
 *.[xX][lL][sS]
