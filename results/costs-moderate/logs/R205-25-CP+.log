@@ -13,14 +13,15 @@ EV	First	Last	Power sum	Min periods
 3	1	77	2512000	14
 4	1	77	2556000	15
 5	1	53	2905112	17
-Initial cost LP bound: 173.60 (0.12 seconds of preprocessing)
+Initial cost LP bound: 173.60 (0.10 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.90 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 23871 variables, 17113 constraints
  ! Presolve      : 2246 extractables eliminated
- ! TimeLimit            = 599.86
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.40s (0.40s extraction + 0.00s propagation)
+ ! Initial process time : 0.36s (0.36s extraction + 0.00s propagation)
  !  . Log search space  : 27122.2 (before), 27122.2 (after)
  !  . Memory usage      : 34.2 MB (before), 34.2 MB (after)
  ! Using parallel search with 8 workers.
@@ -29,7 +30,7 @@ Initial cost LP bound: 173.60 (0.12 seconds of preprocessing)
                         0      23871                 -
  + New bound is 173.5950
  ! Using temporal relaxation.
- *      173.6080     158k  37.65s       7      (gap is 0.01%)
+ *      173.6080     158k  43.28s       7      (gap is 0.01%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 173.6080 (optimal - effective tol. is 0.02)
@@ -38,13 +39,13 @@ Initial cost LP bound: 173.60 (0.12 seconds of preprocessing)
  ! Number of branches     : 1246477
  ! Number of fails        : 608428
  ! Total memory usage     : 490.3 MB (470.9 MB CP Optimizer + 19.4 MB Concert)
- ! Time spent in solve    : 37.65s (37.25s engine + 0.40s extraction)
- ! Search speed (br. / s) : 33462.5
+ ! Time spent in solve    : 43.28s (42.92s engine + 0.36s extraction)
+ ! Search speed (br. / s) : 29041.9
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 37.78 seconds
+Solve time: 43.02 seconds
 Lower bound: 173.60
 Objective value: 173.61
 Relative gap: 0.01%

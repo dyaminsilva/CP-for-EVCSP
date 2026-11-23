@@ -14,14 +14,15 @@ EV	First	Last	Power sum	Min periods
 4	1	23	2694000	15
 5	1	29	2342000	14
 6	1	29	3459363	20
-Initial cost LP bound: 196.98 (0.09 seconds of preprocessing)
+Initial cost LP bound: 196.98 (0.09 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.91 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 9563 variables, 7011 constraints
  ! Presolve      : 1008 extractables eliminated
- ! TimeLimit            = 599.90
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.17s (0.15s extraction + 0.02s propagation)
+ ! Initial process time : 0.14s (0.14s extraction + 0.00s propagation)
  !  . Log search space  : 11349.1 (before), 11349.1 (after)
  !  . Memory usage      : 15.2 MB (before), 15.2 MB (after)
  ! Using parallel search with 8 workers.
@@ -30,7 +31,7 @@ Initial cost LP bound: 196.98 (0.09 seconds of preprocessing)
                         0       9563                 -
  + New bound is 196.9815
  ! Using temporal relaxation.
- *      196.9923    23509  6.21s        3      (gap is 0.01%)
+ *      196.9923    23509  6.55s        3      (gap is 0.01%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 196.9923 (optimal - effective tol. is 0.02)
@@ -39,13 +40,13 @@ Initial cost LP bound: 196.98 (0.09 seconds of preprocessing)
  ! Number of branches     : 195696
  ! Number of fails        : 92419
  ! Total memory usage     : 208.9 MB (201.2 MB CP Optimizer + 7.7 MB Concert)
- ! Time spent in solve    : 6.21s (6.06s engine + 0.15s extraction)
- ! Search speed (br. / s) : 32293.1
+ ! Time spent in solve    : 6.55s (6.42s engine + 0.14s extraction)
+ ! Search speed (br. / s) : 30529.8
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 6.31 seconds
+Solve time: 6.50 seconds
 Lower bound: 196.98
 Objective value: 196.99
 Relative gap: 0.01%

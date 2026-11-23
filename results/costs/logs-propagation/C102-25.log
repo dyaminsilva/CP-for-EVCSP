@@ -11,14 +11,15 @@ EV	First	Last	Power sum	Min periods
 1	1	29	1046000	6
 2	1	36	1708000	10
 3	1	28	3580788	20
-Initial cost LP bound: 80.05 (0.05 seconds of preprocessing)
+Initial cost LP bound: 80.05 (0.05 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.95 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 5732 variables, 4173 constraints
  ! Presolve      : 606 extractables eliminated
- ! TimeLimit            = 599.95
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.10s (0.10s extraction + 0.00s propagation)
+ ! Initial process time : 0.09s (0.09s extraction + 0.00s propagation)
  !  . Log search space  : 9269.0 (before), 9269.0 (after)
  !  . Memory usage      : 9.5 MB (before), 9.5 MB (after)
  ! Using parallel search with 8 workers.
@@ -27,7 +28,7 @@ Initial cost LP bound: 80.05 (0.05 seconds of preprocessing)
                         0       5732                 -
  + New bound is 80.05173
  ! Using temporal relaxation.
- *      80.05282      208  0.38s        1      (gap is 0.00%)
+ *      80.05282      208  0.36s        1      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 80.05282 (optimal - effective tol. is 0.01)
@@ -36,13 +37,13 @@ Initial cost LP bound: 80.05 (0.05 seconds of preprocessing)
  ! Number of branches     : 1925
  ! Number of fails        : 508
  ! Total memory usage     : 131.2 MB (126.5 MB CP Optimizer + 4.7 MB Concert)
- ! Time spent in solve    : 0.44s (0.34s engine + 0.10s extraction)
- ! Search speed (br. / s) : 5661.8
+ ! Time spent in solve    : 0.42s (0.33s engine + 0.09s extraction)
+ ! Search speed (br. / s) : 5833.3
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 0.49 seconds
+Solve time: 0.38 seconds
 Lower bound: 80.05
 Objective value: 80.05
 Relative gap: 0.00%

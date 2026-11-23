@@ -11,14 +11,15 @@ EV	First	Last	Power sum	Min periods
 1	1	33	848000	5
 2	1	33	1798000	10
 3	1	28	3233780	18
-Initial cost LP bound: 74.21 (0.05 seconds of preprocessing)
+Initial cost LP bound: 74.21 (0.05 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.95 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 5885 variables, 4278 constraints
  ! Presolve      : 612 extractables eliminated
- ! TimeLimit            = 599.95
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.09s (0.09s extraction + 0.00s propagation)
+ ! Initial process time : 0.08s (0.08s extraction + 0.00s propagation)
  !  . Log search space  : 6890.6 (before), 6890.6 (after)
  !  . Memory usage      : 9.3 MB (before), 9.3 MB (after)
  ! Using parallel search with 8 workers.
@@ -27,7 +28,7 @@ Initial cost LP bound: 74.21 (0.05 seconds of preprocessing)
                         0       5885                 -
  + New bound is 74.20512
  ! Using temporal relaxation.
- *      74.20602       51  0.20s        4      (gap is 0.00%)
+ *      74.20602       51  0.18s        4      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 74.20602 (optimal - effective tol. is 0.01)
@@ -36,13 +37,13 @@ Initial cost LP bound: 74.21 (0.05 seconds of preprocessing)
  ! Number of branches     : 457
  ! Number of fails        : 67
  ! Total memory usage     : 101.5 MB (96.6 MB CP Optimizer + 4.8 MB Concert)
- ! Time spent in solve    : 0.20s (0.11s engine + 0.09s extraction)
- ! Search speed (br. / s) : 4154.5
+ ! Time spent in solve    : 0.18s (0.11s engine + 0.08s extraction)
+ ! Search speed (br. / s) : 4570.0
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 0.25 seconds
+Solve time: 0.15 seconds
 Lower bound: 74.21
 Objective value: 74.21
 Relative gap: 0.00%

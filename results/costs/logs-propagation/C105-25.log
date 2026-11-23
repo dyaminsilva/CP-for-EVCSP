@@ -11,14 +11,15 @@ EV	First	Last	Power sum	Min periods
 1	1	32	1798000	10
 2	1	34	994000	6
 3	1	32	3245113	19
-Initial cost LP bound: 76.90 (0.05 seconds of preprocessing)
+Initial cost LP bound: 76.90 (0.05 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.95 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 6119 variables, 4446 constraints
  ! Presolve      : 636 extractables eliminated
- ! TimeLimit            = 599.95
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.09s (0.09s extraction + 0.00s propagation)
+ ! Initial process time : 0.08s (0.08s extraction + 0.00s propagation)
  !  . Log search space  : 6594.6 (before), 6594.6 (after)
  !  . Memory usage      : 9.5 MB (before), 9.5 MB (after)
  ! Using parallel search with 8 workers.
@@ -27,7 +28,7 @@ Initial cost LP bound: 76.90 (0.05 seconds of preprocessing)
                         0       6119                 -
  + New bound is 76.90360
  ! Using temporal relaxation.
- *      76.90451      736  0.52s        2      (gap is 0.00%)
+ *      76.90451      736  0.49s        2      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 76.90451 (optimal - effective tol. is 0.01)
@@ -36,13 +37,13 @@ Initial cost LP bound: 76.90 (0.05 seconds of preprocessing)
  ! Number of branches     : 8083
  ! Number of fails        : 3348
  ! Total memory usage     : 133.4 MB (128.4 MB CP Optimizer + 5.0 MB Concert)
- ! Time spent in solve    : 0.52s (0.43s engine + 0.09s extraction)
- ! Search speed (br. / s) : 19245.2
+ ! Time spent in solve    : 0.49s (0.42s engine + 0.08s extraction)
+ ! Search speed (br. / s) : 19714.6
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 0.56 seconds
+Solve time: 0.46 seconds
 Lower bound: 76.90
 Objective value: 76.90
 Relative gap: 0.00%

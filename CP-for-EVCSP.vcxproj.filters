@@ -13,7 +13,7 @@
     <ClInclude Include="cpp\model\EVCSP.h"><Filter>Model</Filter></ClInclude>
     <ClInclude Include="cpp\model\CP.h"><Filter>Model</Filter></ClInclude>
     <ClInclude Include="cpp\model\CostPropagation.h"><Filter>Model</Filter></ClInclude>
-    <ClInclude Include="cpp\model\MILP.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="cpp\model\MIP.h"><Filter>Model</Filter></ClInclude>
     <ClInclude Include="cpp\model\ChargingNetwork.h"><Filter>Model</Filter></ClInclude>
     <ClInclude Include="cpp\model\CostLP.h"><Filter>Model</Filter></ClInclude>
     <ClInclude Include="cpp\model\ChargingCommon.h"><Filter>Model</Filter></ClInclude>
@@ -23,7 +23,7 @@
     <ClCompile Include="cpp\model\EVCSP.cpp"><Filter>Model</Filter></ClCompile>
     <ClCompile Include="cpp\model\CP.cpp"><Filter>Model</Filter></ClCompile>
     <ClCompile Include="cpp\model\CostPropagation.cpp"><Filter>Model</Filter></ClCompile>
-    <ClCompile Include="cpp\model\MILP.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="cpp\model\MIP.cpp"><Filter>Model</Filter></ClCompile>
     <ClCompile Include="cpp\model\ChargingNetwork.cpp"><Filter>Model</Filter></ClCompile>
     <ClCompile Include="cpp\model\CostLP.cpp"><Filter>Model</Filter></ClCompile>
     <ClCompile Include="cpp\model\ChargingCommon.cpp"><Filter>Model</Filter></ClCompile>

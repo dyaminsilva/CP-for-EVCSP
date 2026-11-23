@@ -13,14 +13,15 @@ EV	First	Last	Power sum	Min periods
 3	1	62	2466000	14
 4	1	90	3904587	22
 5	1	90	2678000	15
-Initial cost LP bound: 201.48 (0.14 seconds of preprocessing)
+Initial cost LP bound: 201.48 (0.13 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.87 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 27966 variables, 20026 constraints
  ! Presolve      : 2612 extractables eliminated
- ! TimeLimit            = 599.84
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.48s (0.47s extraction + 0.02s propagation)
+ ! Initial process time : 0.42s (0.42s extraction + 0.00s propagation)
  !  . Log search space  : 31501.4 (before), 31501.4 (after)
  !  . Memory usage      : 39.0 MB (before), 39.0 MB (after)
  ! Using parallel search with 8 workers.
@@ -29,8 +30,8 @@ Initial cost LP bound: 201.48 (0.14 seconds of preprocessing)
                         0      27966                 -
  + New bound is 201.4781
  ! Using temporal relaxation.
- *      202.3807      206  1.27s        2      (gap is 0.45%)
- *      201.4829      358  1.81s        7      (gap is 0.00%)
+ *      202.3807      206  1.25s        2      (gap is 0.45%)
+ *      201.4829      358  1.77s        7      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 2 solutions found.
  ! Best objective         : 201.4829 (optimal - effective tol. is 0.02)
@@ -39,13 +40,13 @@ Initial cost LP bound: 201.48 (0.14 seconds of preprocessing)
  ! Number of branches     : 6701
  ! Number of fails        : 2116
  ! Total memory usage     : 556.5 MB (534.2 MB CP Optimizer + 22.4 MB Concert)
- ! Time spent in solve    : 1.82s (1.36s engine + 0.47s extraction)
- ! Search speed (br. / s) : 4963.7
+ ! Time spent in solve    : 1.78s (1.36s engine + 0.42s extraction)
+ ! Search speed (br. / s) : 4927.2
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 1.97 seconds
+Solve time: 1.49 seconds
 Lower bound: 201.48
 Objective value: 201.48
 Relative gap: 0.00%

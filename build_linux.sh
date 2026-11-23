@@ -15,7 +15,7 @@ g++ -std=c++20 -O2 -DNDEBUG -DIL_STD -m64 -fPIC -fno-strict-aliasing \
     cpp/model/ChargingCommon.cpp \
     cpp/model/CP.cpp \
     cpp/model/CostPropagation.cpp \
-    cpp/model/MILP.cpp \
+    cpp/model/MIP.cpp \
     cpp/model/ChargingNetwork.cpp \
     cpp/model/CostLP.cpp \
     -L"$studio/cplex/lib/x86-64_linux/static_pic" \

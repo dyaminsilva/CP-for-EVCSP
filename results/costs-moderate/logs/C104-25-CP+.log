@@ -11,11 +11,12 @@ EV	First	Last	Power sum	Min periods
 1	1	28	3594280	20
 2	1	29	1046000	6
 3	1	35	1616000	9
-Initial cost LP bound: 79.15 (0.05 seconds of preprocessing)
+Initial cost LP bound: 79.15 (0.05 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.95 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 5687 variables, 4140 constraints
  ! Presolve      : 600 extractables eliminated
- ! TimeLimit            = 599.95
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
  ! Initial process time : 0.09s (0.09s extraction + 0.00s propagation)
@@ -27,7 +28,7 @@ Initial cost LP bound: 79.15 (0.05 seconds of preprocessing)
                         0       5687                 -
  + New bound is 79.15233
  ! Using temporal relaxation.
- *      79.15336       55  0.36s        1      (gap is 0.00%)
+ *      79.15336       55  0.34s        1      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 79.15336 (optimal - effective tol. is 0.01)
@@ -36,13 +37,13 @@ Initial cost LP bound: 79.15 (0.05 seconds of preprocessing)
  ! Number of branches     : 1139
  ! Number of fails        : 318
  ! Total memory usage     : 130.3 MB (125.6 MB CP Optimizer + 4.7 MB Concert)
- ! Time spent in solve    : 0.42s (0.33s engine + 0.09s extraction)
- ! Search speed (br. / s) : 3451.5
+ ! Time spent in solve    : 0.38s (0.30s engine + 0.09s extraction)
+ ! Search speed (br. / s) : 3796.7
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 0.46 seconds
+Solve time: 0.35 seconds
 Lower bound: 79.15
 Objective value: 79.15
 Relative gap: 0.00%

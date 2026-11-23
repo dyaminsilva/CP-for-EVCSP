@@ -15,7 +15,7 @@ clang++ -std=c++20 -O2 -DNDEBUG -DIL_STD -arch arm64 -stdlib=libc++ -fPIC -fexce
     cpp/model/ChargingCommon.cpp \
     cpp/model/CP.cpp \
     cpp/model/CostPropagation.cpp \
-    cpp/model/MILP.cpp \
+    cpp/model/MIP.cpp \
     cpp/model/ChargingNetwork.cpp \
     cpp/model/CostLP.cpp \
     -L"$studio/cplex/lib/arm64_osx/static_pic" \

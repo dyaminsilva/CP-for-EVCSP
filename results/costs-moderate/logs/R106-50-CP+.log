@@ -19,14 +19,15 @@ EV	First	Last	Power sum	Min periods
 9	1	28	3729196	21
 10	1	32	4282353	24
 11	1	33	1328000	8
-Initial cost LP bound: 430.24 (0.07 seconds of preprocessing)
+Initial cost LP bound: 430.24 (0.07 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.93 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 18159 variables, 13327 constraints
  ! Presolve      : 1574 extractables eliminated
- ! TimeLimit            = 599.91
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.34s (0.33s extraction + 0.02s propagation)
+ ! Initial process time : 0.26s (0.26s extraction + 0.00s propagation)
  !  . Log search space  : 47836.7 (before), 47836.7 (after)
  !  . Memory usage      : 28.3 MB (before), 28.3 MB (after)
  ! Using parallel search with 8 workers.
@@ -36,17 +37,17 @@ Initial cost LP bound: 430.24 (0.07 seconds of preprocessing)
  + New bound is 430.2418
  ! Using temporal relaxation.
  ! ----------------------------------------------------------------------------
- ! Search terminated by limit, no solution found.
+ ! Search terminated by abort, no solution found.
  ! Best bound             : 430.2418
  ! ----------------------------------------------------------------------------
- ! Number of branches     : 11617172
- ! Number of fails        : 5748290
- ! Total memory usage     : 411.4 MB (396.4 MB CP Optimizer + 15.0 MB Concert)
- ! Time spent in solve    : 599.95s (599.63s engine + 0.33s extraction)
- ! Search speed (br. / s) : 19374.2
+ ! Number of branches     : 11357219
+ ! Number of fails        : 5619275
+ ! Total memory usage     : 411.3 MB (396.3 MB CP Optimizer + 15.0 MB Concert)
+ ! Time spent in solve    : 600.21s (599.95s engine + 0.26s extraction)
+ ! Search speed (br. / s) : 18930.6
  ! ----------------------------------------------------------------------------
 
 CP+ status: Unknown
 Objective: costs
-Solve time: 600.03 seconds
+Solve time: 600.02 seconds
 Lower bound: 430.24

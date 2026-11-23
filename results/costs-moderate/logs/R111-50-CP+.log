@@ -17,14 +17,15 @@ EV	First	Last	Power sum	Min periods
 7	1	30	4403778	25
 8	1	32	2664000	15
 9	1	32	4187912	24
-Initial cost LP bound: 397.51 (0.34 seconds of preprocessing)
+Initial cost LP bound: 397.51 (0.36 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.64 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 14726 variables, 10833 constraints
  ! Presolve      : 1338 extractables eliminated
- ! TimeLimit            = 599.65
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.25s (0.25s extraction + 0.00s propagation)
+ ! Initial process time : 0.23s (0.23s extraction + 0.00s propagation)
  !  . Log search space  : 22347.5 (before), 22347.5 (after)
  !  . Memory usage      : 21.5 MB (before), 21.5 MB (after)
  ! Using parallel search with 8 workers.
@@ -33,83 +34,81 @@ Initial cost LP bound: 397.51 (0.34 seconds of preprocessing)
                         0      14726                 -
  + New bound is 397.5112
  ! Using temporal relaxation.
- *      404.1638      893  1.34s        3      (gap is 1.65%)
- *      401.3139     1277  1.42s        1      (gap is 0.95%)
- *      399.6656     2129  1.96s        2      (gap is 0.54%)
- *      398.9286     6373  3.82s        1      (gap is 0.36%)
- *      398.6171    12359  5.81s        3      (gap is 0.28%)
- *      398.6169    18917  8.14s        3      (gap is 0.28%)
- *      398.6152    18762  8.29s        8      (gap is 0.28%)
- *      398.6151    18909  8.52s        8      (gap is 0.28%)
- *      398.6147    19095  8.65s        8      (gap is 0.28%)
- *      398.3468    20684  9.73s        3      (gap is 0.21%)
- *      398.0310    20808  9.91s        3      (gap is 0.13%)
- *      398.0151    20730  9.95s        8      (gap is 0.13%)
- *      398.0151    20963  10.06s       3      (gap is 0.13%)
- *      397.7289    23999  13.29s       3      (gap is 0.05%)
- *      397.7229    24110  13.41s       3      (gap is 0.05%)
- *      397.7226    33363  13.61s       4      (gap is 0.05%)
- *      397.7157    27227  13.77s       8      (gap is 0.05%)
- *      397.7153    33990  13.87s       1      (gap is 0.05%)
- *      397.7153    33544  14.08s       4      (gap is 0.05%)
- ! Time = 14.08s, Average fail depth = 27, Memory usage = 315.7 MB
+ *      404.1638      893  1.32s        3      (gap is 1.65%)
+ *      401.3139     1277  1.38s        1      (gap is 0.95%)
+ *      399.6656     2129  1.98s        2      (gap is 0.54%)
+ *      398.9286     6373  3.96s        1      (gap is 0.36%)
+ *      398.6171    12359  6.16s        3      (gap is 0.28%)
+ *      398.6169    18917  8.58s        3      (gap is 0.28%)
+ *      398.6152    18762  8.74s        8      (gap is 0.28%)
+ *      398.6151    18909  8.98s        8      (gap is 0.28%)
+ *      398.6147    19095  9.12s        8      (gap is 0.28%)
+ *      398.3468    20684  10.34s       3      (gap is 0.21%)
+ *      398.0310    20808  10.58s       3      (gap is 0.13%)
+ *      398.0151    20730  10.62s       8      (gap is 0.13%)
+ *      398.0151    20963  10.73s       3      (gap is 0.13%)
+ *      397.7289    23999  14.17s       3      (gap is 0.05%)
+ *      397.7229    24110  14.29s       3      (gap is 0.05%)
+ *      397.7226    33363  14.50s       4      (gap is 0.05%)
+ *      397.7157    27227  14.65s       8      (gap is 0.05%)
+ *      397.7153    33990  14.78s       1      (gap is 0.05%)
+ *      397.7153    33544  15.05s       4      (gap is 0.05%)
+ ! Time = 15.05s, Average fail depth = 33, Memory usage = 315.1 MB
  ! Current bound is 397.5112 (gap is 0.05%)
  !          Best Branches  Non-fixed    W       Branch decision
- *      397.7152    30336  20.17s       6      (gap is 0.05%)
- *      397.7152    41176  20.34s       2      (gap is 0.05%)
- *      397.7152    38916  21.16s       4      (gap is 0.05%)
- *      397.7152    48390  22.87s       5      (gap is 0.05%)
- *      397.7152    46653  30.41s       1      (gap is 0.05%)
- *      397.7152    40661  34.95s       6      (gap is 0.05%)
- *      397.7152    58746  35.27s       7      (gap is 0.05%)
- *      397.7152    94159  72.87s       7      (gap is 0.05%)
- *      397.7152    81174  73.09s       3      (gap is 0.05%)
- *      397.7152    78662  73.22s       8      (gap is 0.05%)
- *      397.7152    90188  75.04s       4      (gap is 0.05%)
- *      397.7152     106k  77.33s       5      (gap is 0.05%)
- *      397.7151     639k  597.66s      4      (gap is 0.05%)
- *      397.7151     601k  597.91s      2      (gap is 0.05%)
- *      397.7151     607k  598.28s      8      (gap is 0.05%)
+ *      397.7152    30336  21.88s       6      (gap is 0.05%)
+ *      397.7152    41176  22.05s       2      (gap is 0.05%)
+ *      397.7152    38916  22.87s       4      (gap is 0.05%)
+ *      397.7152    48390  24.67s       5      (gap is 0.05%)
+ *      397.7152    46653  32.36s       1      (gap is 0.05%)
+ *      397.7152    40661  37.03s       6      (gap is 0.05%)
+ *      397.7152    58746  37.37s       7      (gap is 0.05%)
+ *      397.7152    94159  76.42s       7      (gap is 0.05%)
+ *      397.7152    81174  76.65s       3      (gap is 0.05%)
+ *      397.7152    78662  76.77s       8      (gap is 0.05%)
+ *      397.7152    90188  78.63s       4      (gap is 0.05%)
+ *      397.7152     106k  81.13s       5      (gap is 0.05%)
  ! ----------------------------------------------------------------------------
- ! Search terminated by limit, 34 solutions found.
- ! Best objective         : 397.7151 (gap is 0.05%)
+ ! Search terminated by abort, 31 solutions found.
+ ! Best objective         : 397.7152 (gap is 0.05%)
  ! Best bound             : 397.5112
  ! ----------------------------------------------------------------------------
- ! Number of branches     : 4981334
- ! Number of fails        : 2373387
- ! Total memory usage     : 319.4 MB (307.2 MB CP Optimizer + 12.2 MB Concert)
- ! Time spent in solve    : 599.68s (599.43s engine + 0.25s extraction)
- ! Search speed (br. / s) : 8310.3
+ ! Number of branches     : 4787502
+ ! Number of fails        : 2280785
+ ! Total memory usage     : 319.4 MB (307.1 MB CP Optimizer + 12.2 MB Concert)
+ ! Time spent in solve    : 599.91s (599.68s engine + 0.23s extraction)
+ ! Search speed (br. / s) : 7983.4
  ! ----------------------------------------------------------------------------
 
 CP+ status: Feasible
 Objective: costs
-Solve time: 600.02 seconds
+Solve time: 600.04 seconds
 Lower bound: 397.51
 Objective value: 397.72
 Relative gap: 0.05%
 EV	Block	Level	Power	Start	End	Duration
 1	1	2	119929	1	2	1
-1	2	3	179894	2	3	1
-1	3	1	59964	3	17	14
-1	4	3	179894	17	33	16
+1	2	3	179894	2	11	9
+1	3	1	59964	11	25	14
+1	4	3	179894	25	33	8
 2	1	3	179894	1	18	17
-3	1	2	119929	25	26	1
-3	2	3	179894	26	33	7
-4	1	2	119929	1	2	1
-4	2	3	179894	2	22	20
-4	3	1	59964	22	32	10
+3	1	2	119929	1	2	1
+3	2	3	179894	2	9	7
+4	1	3	179894	1	2	1
+4	2	2	119929	2	11	9
+4	3	3	179894	11	20	9
+4	4	2	119929	20	32	12
 5	1	2	119929	1	2	1
 5	2	3	179894	2	25	23
 6	1	3	179894	1	2	1
-6	2	2	119929	2	7	5
-6	3	3	179894	7	17	10
-6	4	1	59964	17	28	11
+6	2	2	119929	2	20	18
+6	3	3	179894	20	23	3
+6	4	1	59964	23	29	6
 7	1	3	179894	1	2	1
-7	2	1	59964	2	3	1
-7	3	3	179894	3	24	21
-7	4	1	59964	24	31	7
+7	2	2	119929	2	9	7
+7	3	3	179894	9	22	13
+7	4	2	119929	22	31	9
 8	1	3	179894	18	33	15
-9	1	3	179894	1	7	6
-9	2	2	119929	7	33	26
+9	1	2	119929	9	11	2
+9	2	3	179894	11	33	22
 Block intervals are [Start, End), in charging periods.

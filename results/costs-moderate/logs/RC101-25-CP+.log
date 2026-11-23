@@ -14,14 +14,15 @@ EV	First	Last	Power sum	Min periods
 4	1	27	3029779	17
 5	1	31	2208000	13
 6	1	31	3048668	17
-Initial cost LP bound: 210.47 (0.11 seconds of preprocessing)
+Initial cost LP bound: 210.47 (0.10 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.90 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 10364 variables, 7584 constraints
  ! Presolve      : 1092 extractables eliminated
- ! TimeLimit            = 599.88
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.18s (0.18s extraction + 0.00s propagation)
+ ! Initial process time : 0.17s (0.17s extraction + 0.00s propagation)
  !  . Log search space  : 13208.0 (before), 13208.0 (after)
  !  . Memory usage      : 16.4 MB (before), 16.4 MB (after)
  ! Using parallel search with 8 workers.
@@ -30,7 +31,7 @@ Initial cost LP bound: 210.47 (0.11 seconds of preprocessing)
                         0      10364                 -
  + New bound is 210.4734
  ! Using temporal relaxation.
- *      210.4757      971  0.69s        2      (gap is 0.00%)
+ *      210.4757      971  0.68s        2      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 210.4757 (optimal - effective tol. is 0.02)
@@ -39,13 +40,13 @@ Initial cost LP bound: 210.47 (0.11 seconds of preprocessing)
  ! Number of branches     : 7515
  ! Number of fails        : 2437
  ! Total memory usage     : 224.3 MB (216.1 MB CP Optimizer + 8.3 MB Concert)
- ! Time spent in solve    : 0.70s (0.52s engine + 0.18s extraction)
+ ! Time spent in solve    : 0.69s (0.53s engine + 0.17s extraction)
  ! Search speed (br. / s) : 14451.9
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 0.82 seconds
+Solve time: 0.62 seconds
 Lower bound: 210.47
 Objective value: 210.48
 Relative gap: 0.00%

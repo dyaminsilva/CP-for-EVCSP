@@ -11,14 +11,15 @@ EV	First	Last	Power sum	Min periods
 1	1	23	3580788	20
 2	1	23	4120453	23
 3	1	23	3351430	19
-Initial cost LP bound: 140.00 (0.01 seconds of preprocessing)
+Initial cost LP bound: 140.00 (0.01 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.99 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 3302 variables, 2481 constraints
  ! Presolve      : 320 extractables eliminated
- ! TimeLimit            = 599.99
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.06s (0.06s extraction + 0.00s propagation)
+ ! Initial process time : 0.05s (0.05s extraction + 0.00s propagation)
  !  . Log search space  : 884.7 (before), 884.7 (after)
  !  . Memory usage      : 5.3 MB (before), 5.3 MB (after)
  ! Using parallel search with 8 workers.
@@ -27,32 +28,32 @@ Initial cost LP bound: 140.00 (0.01 seconds of preprocessing)
                         0       3302                 -
  + New bound is 139.9981
  ! Using temporal relaxation.
- *      144.3649       32  0.16s        1      (gap is 3.02%)
- *      140.7670       93  0.16s        1      (gap is 0.55%)
- *      140.0174      666  0.20s        3      (gap is 0.01%)
- *      140.0174     5094  0.52s        7      (gap is 0.01%)
- *      140.0174     5960  0.59s        7      (gap is 0.01%)
- *      140.0174     8391  0.79s        7      (gap is 0.01%)
- *      140.0174    10099  0.93s        7      (gap is 0.01%)
+ *      144.3649       32  0.17s        1      (gap is 3.02%)
+ *      140.7670       93  0.17s        1      (gap is 0.55%)
+ *      140.0174      666  0.21s        3      (gap is 0.01%)
+ *      140.0174     5094  0.54s        7      (gap is 0.01%)
+ *      140.0174     5960  0.63s        7      (gap is 0.01%)
+ *      140.0174     8391  0.80s        7      (gap is 0.01%)
+ *      140.0174    10099  0.94s        7      (gap is 0.01%)
  *      140.0174    17787  1.25s        8      (gap is 0.01%)
  ! Using failure-directed search.
         140.0174    82000        262    2            -
- *      140.0174    82000  8.24s        2      (gap is 0.01%)
+ *      140.0174    82000  8.01s        2      (gap is 0.01%)
  ! ----------------------------------------------------------------------------
- ! Search terminated by limit, 9 solutions found.
+ ! Search terminated by abort, 9 solutions found.
  ! Best objective         : 140.0174 (gap is 0.01%)
  ! Best bound             : 139.9981
  ! ----------------------------------------------------------------------------
- ! Number of branches     : 23231646
- ! Number of fails        : 11682453
- ! Total memory usage     : 88.6 MB (85.8 MB CP Optimizer + 2.8 MB Concert)
- ! Time spent in solve    : 600.02s (599.97s engine + 0.06s extraction)
- ! Search speed (br. / s) : 38722.0
+ ! Number of branches     : 19146246
+ ! Number of fails        : 9677205
+ ! Total memory usage     : 86.1 MB (83.4 MB CP Optimizer + 2.8 MB Concert)
+ ! Time spent in solve    : 600.06s (600.01s engine + 0.05s extraction)
+ ! Search speed (br. / s) : 31909.9
  ! ----------------------------------------------------------------------------
 
 CP+ status: Feasible
 Objective: costs
-Solve time: 600.02 seconds
+Solve time: 600.03 seconds
 Lower bound: 140.00
 Objective value: 140.02
 Relative gap: 0.01%

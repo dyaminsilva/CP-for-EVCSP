@@ -13,14 +13,15 @@ EV	First	Last	Power sum	Min periods
 3	1	35	1926000	11
 4	1	35	1398000	8
 5	1	35	3177113	18
-Initial cost LP bound: 153.81 (0.15 seconds of preprocessing)
+Initial cost LP bound: 153.81 (0.14 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.86 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 10749 variables, 7807 constraints
  ! Presolve      : 1130 extractables eliminated
- ! TimeLimit            = 599.84
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.20s (0.20s extraction + 0.00s propagation)
+ ! Initial process time : 0.17s (0.17s extraction + 0.00s propagation)
  !  . Log search space  : 12259.2 (before), 12259.2 (after)
  !  . Memory usage      : 16.9 MB (before), 16.9 MB (after)
  ! Using parallel search with 8 workers.
@@ -29,10 +30,10 @@ Initial cost LP bound: 153.81 (0.15 seconds of preprocessing)
                         0      10749                 -
  + New bound is 153.8073
  ! Using temporal relaxation.
- *      157.4195      853  0.79s        1      (gap is 2.29%)
- *      155.0215      806  0.79s        2      (gap is 0.78%)
- *      155.0089     1666  1.04s        6      (gap is 0.78%)
- *      153.8119     3955  1.75s        8      (gap is 0.00%)
+ *      157.4195      853  0.74s        1      (gap is 2.29%)
+ *      155.0215      806  0.74s        2      (gap is 0.78%)
+ *      155.0089     1666  0.97s        6      (gap is 0.78%)
+ *      153.8119     3955  1.68s        8      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 4 solutions found.
  ! Best objective         : 153.8119 (optimal - effective tol. is 0.02)
@@ -41,13 +42,13 @@ Initial cost LP bound: 153.81 (0.15 seconds of preprocessing)
  ! Number of branches     : 41965
  ! Number of fails        : 18597
  ! Total memory usage     : 240.8 MB (231.8 MB CP Optimizer + 9.0 MB Concert)
- ! Time spent in solve    : 1.77s (1.58s engine + 0.20s extraction)
- ! Search speed (br. / s) : 26560.1
+ ! Time spent in solve    : 1.70s (1.54s engine + 0.17s extraction)
+ ! Search speed (br. / s) : 27250.0
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 1.93 seconds
+Solve time: 1.68 seconds
 Lower bound: 153.81
 Objective value: 153.81
 Relative gap: 0.00%

@@ -11,14 +11,15 @@ EV	First	Last	Power sum	Min periods
 1	1	107	4376795	25
 2	1	95	2466000	14
 3	1	58	3486347	20
-Initial cost LP bound: 130.66 (0.07 seconds of preprocessing)
+Initial cost LP bound: 130.66 (0.07 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.93 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 17135 variables, 12276 constraints
  ! Presolve      : 1608 extractables eliminated
- ! TimeLimit            = 599.92
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.29s (0.29s extraction + 0.00s propagation)
+ ! Initial process time : 0.25s (0.25s extraction + 0.00s propagation)
  !  . Log search space  : 32288.6 (before), 32288.6 (after)
  !  . Memory usage      : 24.5 MB (before), 24.5 MB (after)
  ! Using parallel search with 8 workers.
@@ -27,30 +28,30 @@ Initial cost LP bound: 130.66 (0.07 seconds of preprocessing)
                         0      17135                 -
  + New bound is 130.6642
  ! Using temporal relaxation.
- *      146.7630       27  0.74s        1      (gap is 10.97%)
- *      146.3128      148  0.74s        1      (gap is 10.70%)
- *      141.8157       27  0.74s        2      (gap is 7.86%)
- *      137.6178      149  0.74s        2      (gap is 5.05%)
- *      132.2217      207  0.88s        1      (gap is 1.18%)
- *      131.4715     1558  1.68s        3      (gap is 0.61%)
- *      131.4715    11468  6.78s        1      (gap is 0.61%)
- *      131.4715    17257  11.72s       8      (gap is 0.61%)
- *      131.0218    43750  35.11s       2      (gap is 0.27%)
- *      131.0218    38299  35.15s       8      (gap is 0.27%)
- *      131.0218    39232  35.21s       5      (gap is 0.27%)
- *      130.7250    60722  58.37s       8      (gap is 0.05%)
- *      130.7218    63915  58.45s       5      (gap is 0.04%)
- *      130.7218    60921  58.59s       8      (gap is 0.04%)
+ *      146.7630       27  0.68s        1      (gap is 10.97%)
+ *      146.3128      148  0.68s        1      (gap is 10.70%)
+ *      141.8157       27  0.68s        2      (gap is 7.86%)
+ *      137.6178      149  0.68s        2      (gap is 5.05%)
+ *      132.2217      207  0.84s        1      (gap is 1.18%)
+ *      131.4715     1558  1.64s        3      (gap is 0.61%)
+ *      131.4715    11468  6.96s        1      (gap is 0.61%)
+ *      131.4715    17257  12.68s       8      (gap is 0.61%)
+ *      131.0218    43750  41.50s       2      (gap is 0.27%)
+ *      131.0218    38299  41.55s       8      (gap is 0.27%)
+ *      131.0218    39232  41.61s       5      (gap is 0.27%)
+ *      130.7250    60722  66.39s       8      (gap is 0.05%)
+ *      130.7218    63915  66.50s       5      (gap is 0.04%)
+ *      130.7218    60921  66.69s       8      (gap is 0.04%)
  ! ----------------------------------------------------------------------------
- ! Search terminated by limit, 14 solutions found.
+ ! Search terminated by abort, 14 solutions found.
  ! Best objective         : 130.7218 (gap is 0.04%)
  ! Best bound             : 130.6642
  ! ----------------------------------------------------------------------------
- ! Number of branches     : 4295014
- ! Number of fails        : 2079851
- ! Total memory usage     : 372.1 MB (358.7 MB CP Optimizer + 13.4 MB Concert)
- ! Time spent in solve    : 599.95s (599.67s engine + 0.29s extraction)
- ! Search speed (br. / s) : 7162.4
+ ! Number of branches     : 4073083
+ ! Number of fails        : 1972198
+ ! Total memory usage     : 371.5 MB (358.2 MB CP Optimizer + 13.4 MB Concert)
+ ! Time spent in solve    : 600.21s (599.96s engine + 0.25s extraction)
+ ! Search speed (br. / s) : 6788.9
  ! ----------------------------------------------------------------------------
 
 CP+ status: Feasible

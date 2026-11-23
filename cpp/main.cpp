@@ -1,6 +1,6 @@
 #include "model/EVCSP.h"
 #include "model/CP.h"
-#include "model/MILP.h"
+#include "model/MIP.h"
 
 #include <exception>
 #include <iostream>
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 
         // solves the instance
         const model::ChargingResult result = solver == "MILP"
-            ? model::solveMILP(instance, objective)
+            ? model::solveMIP(instance, objective)
             : model::solveCP(instance, objective, constants::TimeLimitSeconds, true, solver == "CP+");
         model::printChargingSolution(std::cout, instance, result, solver, objective);
         model::appendChargingResult(instance, result, solver, objective);

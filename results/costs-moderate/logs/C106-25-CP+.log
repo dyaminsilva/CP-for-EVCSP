@@ -12,14 +12,15 @@ EV	First	Last	Power sum	Min periods
 2	1	28	994000	6
 3	1	39	1784000	10
 4	1	26	3245113	19
-Initial cost LP bound: 87.70 (0.06 seconds of preprocessing)
+Initial cost LP bound: 87.70 (0.07 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.93 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 7930 variables, 5756 constraints
  ! Presolve      : 814 extractables eliminated
- ! TimeLimit            = 599.93
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.13s (0.13s extraction + 0.00s propagation)
+ ! Initial process time : 0.12s (0.12s extraction + 0.00s propagation)
  !  . Log search space  : 10989.6 (before), 10989.6 (after)
  !  . Memory usage      : 12.1 MB (before), 12.1 MB (after)
  ! Using parallel search with 8 workers.
@@ -28,7 +29,7 @@ Initial cost LP bound: 87.70 (0.06 seconds of preprocessing)
                         0       7930                 -
  + New bound is 87.69716
  ! Using temporal relaxation.
- *      87.69907      310  0.50s        2      (gap is 0.00%)
+ *      87.69907      310  0.48s        2      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 1 solution found.
  ! Best objective         : 87.69907 (optimal - effective tol. is 0.01)
@@ -37,13 +38,13 @@ Initial cost LP bound: 87.70 (0.06 seconds of preprocessing)
  ! Number of branches     : 2487
  ! Number of fails        : 709
  ! Total memory usage     : 166.6 MB (160.2 MB CP Optimizer + 6.3 MB Concert)
- ! Time spent in solve    : 0.58s (0.45s engine + 0.13s extraction)
+ ! Time spent in solve    : 0.56s (0.45s engine + 0.12s extraction)
  ! Search speed (br. / s) : 5652.3
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 0.64 seconds
+Solve time: 0.51 seconds
 Lower bound: 87.70
 Objective value: 87.70
 Relative gap: 0.00%

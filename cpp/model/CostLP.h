@@ -18,7 +18,7 @@ struct CostRoute {
 
 struct CostLPBound {
     double value = 0.0; //initial LP bound
-	double time = 0.0; // time to compute the LP bound
+	double time = 0.0; // LP optimization time; excludes model construction and extraction
     double constant = 0.0; // fixed contribution from dualizing constraints
     std::vector<CostRoute> routes; // modified networks for all EVs
 };

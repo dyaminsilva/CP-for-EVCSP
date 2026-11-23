@@ -16,14 +16,15 @@ EV	First	Last	Power sum	Min periods
 6	1	33	2986000	14
 7	1	25	5410281	25
 8	1	33	2512000	12
-Initial cost LP bound: 363.16 (0.31 seconds of preprocessing)
+Initial cost LP bound: 363.16 (0.31 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.69 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 13230 variables, 9700 constraints
  ! Presolve      : 1526 extractables eliminated
- ! TimeLimit            = 599.69
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.24s (0.24s extraction + 0.00s propagation)
+ ! Initial process time : 0.21s (0.21s extraction + 0.00s propagation)
  !  . Log search space  : 17093.7 (before), 17093.7 (after)
  !  . Memory usage      : 21.2 MB (before), 21.2 MB (after)
  ! Using parallel search with 8 workers.
@@ -32,13 +33,13 @@ Initial cost LP bound: 363.16 (0.31 seconds of preprocessing)
                         0      13230                 -
  + New bound is 363.1562
  ! Using temporal relaxation.
- *      363.9271    86880  18.15s       8      (gap is 0.21%)
- *      363.9140    95151  20.75s       7      (gap is 0.21%)
- *      363.9126    95159  20.75s       7      (gap is 0.21%)
+ *      363.9271    86880  18.17s       8      (gap is 0.21%)
+ *      363.9140    95151  20.74s       7      (gap is 0.21%)
+ *      363.9126    95159  20.74s       7      (gap is 0.21%)
  *      363.9099    95760  20.78s       3      (gap is 0.21%)
  *      363.9095    95506  20.97s       7      (gap is 0.21%)
  *      363.9095    96401  21.10s       3      (gap is 0.21%)
- *      363.1599    95789  21.13s       7      (gap is 0.00%)
+ *      363.1599    95789  21.12s       7      (gap is 0.00%)
  ! ----------------------------------------------------------------------------
  ! Search completed, 7 solutions found.
  ! Best objective         : 363.1599 (optimal - effective tol. is 0.04)
@@ -47,13 +48,13 @@ Initial cost LP bound: 363.16 (0.31 seconds of preprocessing)
  ! Number of branches     : 803222
  ! Number of fails        : 389174
  ! Total memory usage     : 307.3 MB (296.3 MB CP Optimizer + 11.0 MB Concert)
- ! Time spent in solve    : 21.13s (20.90s engine + 0.24s extraction)
- ! Search speed (br. / s) : 38431.7
+ ! Time spent in solve    : 21.13s (20.93s engine + 0.21s extraction)
+ ! Search speed (br. / s) : 38394.9
  ! ----------------------------------------------------------------------------
 
 CP+ status: Optimal
 Objective: costs
-Solve time: 21.44 seconds
+Solve time: 21.23 seconds
 Lower bound: 363.16
 Objective value: 363.16
 Relative gap: 0.00%

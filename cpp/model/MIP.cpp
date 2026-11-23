@@ -1,4 +1,4 @@
-#include "MILP.h"
+#include "MIP.h"
 #include "ChargingNetwork.h"
 
 #include <algorithm>
@@ -30,8 +30,8 @@ std::vector<ChargingBlock> readBlocks(const EVCSP& data, const std::vector<std::
 
 } // namespace
 
-// solves the MILP
-ChargingResult model::solveMILP(const EVCSP& data, const std::string& objective, double timeLimit,
+// solves the MIP
+ChargingResult model::solveMIP(const EVCSP& data, const std::string& objective, double timeLimit,
                                 bool log) {
     const bool costs = objective == "costs";
     const int horizon = data.last_charging_period;

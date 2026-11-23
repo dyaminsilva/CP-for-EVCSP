@@ -6,13 +6,30 @@
 
 #include <algorithm>
 #include <cmath>
-#include <chrono>
 #include <iostream>
 #include <stdexcept>
 #include <string>
 #include <vector>
 
 namespace {
+
+double optimizationTime(IloCP cp) {
+    return std::max(0.0, cp.getInfo(IloCP::SolveTime) - cp.getInfo(IloCP::ExtractionTime));
+}
+
+// The native TimeLimit includes extraction; stop on optimization time instead.
+class OptimizationTimeLimit final : public IloCP::Callback {
+    double seconds_;
+    bool extracted_ = false;
+public:
+    explicit OptimizationTimeLimit(double seconds) : seconds_(seconds) {}
+    void invoke(IloCP cp, Reason reason) override {
+        if (reason == EndExtraction) extracted_ = true;
+        if (extracted_ && (reason == Periodic || reason == EndInitialPropagation || reason == Solution)
+            && optimizationTime(cp) >= seconds_)
+            cp.abortSearch();
+    }
+};
 
 // container for the CP variables for one vehicle
 struct Intervals {
@@ -95,7 +112,7 @@ ChargingResult solveCP(const EVCSP& data, const std::string& objective, double t
         timeLimit = std::max(0.0, timeLimit - lp.time);
         if (log)
             std::cout << "Initial cost LP bound: " << result.lowerBound
-                      << " (" << lp.time << " seconds of preprocessing)\n";
+                      << " (" << lp.time << " seconds of LP optimization)\n";
         if (timeLimit == 0.0) return result;
     }
     // necessary workload bounds strengthen the interval formulation without restricting schedules.
@@ -104,6 +121,7 @@ ChargingResult solveCP(const EVCSP& data, const std::string& objective, double t
     int earliest = data.last_charging_period;
     int lastEnd = 0;
 
+    OptimizationTimeLimit optimizationLimit(timeLimit);
     IloEnv env;
     try {
         IloModel model(env);
@@ -275,16 +293,11 @@ ChargingResult solveCP(const EVCSP& data, const std::string& objective, double t
                 IloNumExpr objectiveCost(env);
                 objectiveCost += strengthen ? IloMax(cost, std::max(points.cost, result.lowerBound)) : cost;
 				if (propagation) { // reduced cost-based propagation
-                    const auto propagationStart = std::chrono::steady_clock::now(); // just the builiding time
                     std::vector<std::vector<IloIntervalVarArray>> modes;
                     for (const auto& route : routes) modes.push_back(route.J); // collects charging intervals that will be linked to the arc variables via (5)
                     // creates arc variables, path labels, and constraints (5) and (6);
                     // returns a variable representing the resulting cost bound
                     const IloNumExpr propagated = costPropagation(model, lp, modes);
-                    const double propagationTime = std::chrono::duration<double>(
-                        std::chrono::steady_clock::now() - propagationStart).count();
-                    result.solveTime += propagationTime;
-                    timeLimit = std::max(0.0, timeLimit - propagationTime);
                     objectiveCost = IloMax(objectiveCost, propagated); //
                 }
                 // cost objective
@@ -295,17 +308,21 @@ ChargingResult solveCP(const EVCSP& data, const std::string& objective, double t
             }
         }
 
-        if (timeLimit == 0.0) {
+        if (timeLimit <= 0.0) {
             env.end();
             return result;
         }
         IloCP cp(model);
+        cp.setParameter(IloCP::TimeMode, IloCP::ElapsedTime);
+        cp.setParameter(IloCP::PeriodicCallbackMinDelay, 0.01); // check the optimization budget frequently
         cp.setParameter(IloCP::Workers, constants::SolverThreads);
         cp.setParameter(IloCP::LogVerbosity, log ? IloCP::Terse : IloCP::Quiet);
         cp.setParameter(IloCP::RelativeOptimalityTolerance, constants::RelativeOptimalityGap);
-        cp.setParameter(IloCP::TimeLimit, timeLimit);
+        cp.addCallback(&optimizationLimit);
+        if (log)
+            std::cout << "CP optimization time limit (excluding extraction): " << timeLimit << " seconds\n";
         const bool found = cp.solve();
-        result.solveTime += cp.getInfo(IloCP::SolveTime);
+        result.solveTime += optimizationTime(cp);
         result.branches = cp.getInfo(IloCP::NumberOfBranches);
         const auto status = cp.getStatus();
         if (status == IloAlgorithm::Optimal) result.status = ChargingStatus::Optimal;

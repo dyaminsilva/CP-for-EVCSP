@@ -20,14 +20,15 @@ EV	First	Last	Power sum	Min periods
 10	1	25	3742688	21
 11	1	31	1328000	8
 12	1	26	3271558	19
-Initial cost LP bound: 418.70 (0.09 seconds of preprocessing)
+Initial cost LP bound: 418.70 (0.07 seconds of LP optimization)
+CP optimization time limit (excluding extraction): 599.93 seconds
  ! --------------------------------------------------- CP Optimizer 22.1.0.0 --
  ! Minimization problem - 19169 variables, 14055 constraints
  ! Presolve      : 1570 extractables eliminated
- ! TimeLimit            = 599.89
+ ! PeriodicCallbackMinDelay = 0.01
  ! Workers              = 8
  ! LogVerbosity         = Terse
- ! Initial process time : 0.34s (0.34s extraction + 0.00s propagation)
+ ! Initial process time : 0.32s (0.32s extraction + 0.00s propagation)
  !  . Log search space  : 49246.5 (before), 49246.5 (after)
  !  . Memory usage      : 29.3 MB (before), 29.3 MB (after)
  ! Using parallel search with 8 workers.
@@ -37,17 +38,17 @@ Initial cost LP bound: 418.70 (0.09 seconds of preprocessing)
  + New bound is 418.6988
  ! Using temporal relaxation.
  ! ----------------------------------------------------------------------------
- ! Search terminated by limit, no solution found.
+ ! Search terminated by abort, no solution found.
  ! Best bound             : 418.6988
  ! ----------------------------------------------------------------------------
- ! Number of branches     : 13776959
- ! Number of fails        : 6814773
+ ! Number of branches     : 13391075
+ ! Number of fails        : 6622005
  ! Total memory usage     : 430.0 MB (414.2 MB CP Optimizer + 15.8 MB Concert)
- ! Time spent in solve    : 599.90s (599.56s engine + 0.34s extraction)
- ! Search speed (br. / s) : 22978.4
+ ! Time spent in solve    : 600.26s (599.95s engine + 0.32s extraction)
+ ! Search speed (br. / s) : 22320.3
  ! ----------------------------------------------------------------------------
 
 CP+ status: Unknown
 Objective: costs
-Solve time: 600.01 seconds
+Solve time: 600.02 seconds
 Lower bound: 418.70

@@ -2,7 +2,6 @@
 #include "ChargingNetwork.h"
 
 #include <algorithm>
-#include <chrono>
 #include <cmath>
 #include <map>
 #include <stdexcept>
@@ -60,7 +59,6 @@ void exportCostNetwork(IloCplex cplex, IloExpr cost, IloRangeArray rows,
 
 // computes LP bound and stores dual information (i.e., modified costs)
 model::CostLPBound model::costLPBound(const EVCSP& data, double timeLimit) {
-    const auto start = std::chrono::steady_clock::now();
     CostLPBound lp;
     IloEnv env;
     try {
@@ -73,7 +71,9 @@ model::CostLPBound model::costLPBound(const EVCSP& data, double timeLimit) {
             cplex.setParam(IloCplex::Param::TimeLimit, timeLimit);
             cplex.setOut(env.getNullStream());
             cplex.setWarning(env.getNullStream());
+            const double start = cplex.getCplexTime();
             cplex.solve();
+            lp.time = cplex.getCplexTime() - start;
             // Use only a proven LP optimum
             if (cplex.getCplexStatus() == IloCplex::Optimal) {
                 const double value = cplex.getObjValue();
@@ -102,7 +102,5 @@ model::CostLPBound model::costLPBound(const EVCSP& data, double timeLimit) {
         env.end();
         throw;
     }
-    // Include LP construction, extraction and solve time in the CP budget.
-    lp.time = std::chrono::duration<double>(std::chrono::steady_clock::now() - start).count();
     return lp;
 }
